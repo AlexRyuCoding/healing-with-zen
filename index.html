@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healing with Zen — Acupuncture &amp; Herbal Medicine in Pasadena</title>
+<meta name="description" content="Acupuncture, herbal medicine, and holistic care in Pasadena — supporting hormones, digestion, pain, fertility, and calm since 2013. Book a session with Healing with Zen.">
+<meta name="theme-color" content="#1E2A24">
+<meta property="og:title" content="Healing with Zen — Pasadena Acupuncture">
+<meta property="og:description" content="Medicine that listens to the whole of you. Acupuncture &amp; Traditional Chinese Medicine in Pasadena since 2013.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script>
+  // Hide reveal elements before first paint (no FOUC). Removed if animation can't run.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('preanim');
+  }
+</script>
+
+<style>
+/* ============================================================= TOKENS */
+:root{
+  --paper:#EAE4D5;      /* warm rice-paper base (light sections) */
+  --paper-2:#E1D9C6;    /* slightly deeper paper for cards/insets */
+  --ink:#1E2A24;        /* deep pine ink, near-black green */
+  --ink-soft:#2C3A32;   /* elevated dark surface */
+  --jade:#3E6B55;       /* brand jade — primary green */
+  --jade-2:#557E63;     /* lighter jade for hovers/links */
+  --sage:#9BAE97;       /* soft sage — muted supporting */
+  --mist:#CBD6C7;       /* pale celadon for subtle fills */
+  --moxa:#C8823C;       /* moxa/turmeric gold — warm accent */
+  --moxa-deep:#A5641F;  /* darkened moxa for text on paper (contrast) */
+  --clay:#B0563E;       /* cinnamon clay — secondary accent, sparing */
+  --line:rgba(30,42,36,.14);
+  --line-light:rgba(234,228,213,.16);
+
+  --font-display:"Fraunces", Georgia, serif;
+  --font-body:"Instrument Sans", system-ui, sans-serif;
+  --font-mono:"Space Mono", ui-monospace, monospace;
+
+  --gutter:clamp(1.25rem, 5vw, 6rem);
+  --maxw:1200px;
+  --rail:clamp(48px, 5vw, 96px);
+  --pad-y:clamp(5rem, 12vh, 10rem);
+
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+
+/* ============================================================= RESET */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+ul{list-style:none}
+::selection{background:var(--moxa);color:var(--ink)}
+
+/* Visible focus rings (jade, 2px) */
+a:focus-visible,button:focus-visible,input:focus-visible,
+[tabindex]:focus-visible,.pill:focus-visible{
+  outline:2px solid var(--jade);
+  outline-offset:3px;
+  border-radius:2px;
+}
+:focus:not(:focus-visible){outline:none}
+
+.skip-link{
+  position:fixed;left:1rem;top:-100px;z-index:1000;
+  background:var(--ink);color:var(--paper);
+  padding:.75rem 1.25rem;border-radius:3px;font-family:var(--font-mono);
+  font-size:.8rem;transition:top .2s;
+}
+.skip-link:focus{top:1rem}
+
+/* ============================================================= LAYOUT */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);width:100%}
+section{position:relative}
+.section-pad{padding-block:var(--pad-y)}
+main{position:relative;z-index:3}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:var(--jade);
+  margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.6em;
+}
+.eyebrow .pt{color:var(--moxa-deep);font-weight:700}
+.dark .eyebrow{color:var(--sage)}
+.dark .eyebrow .pt{color:var(--moxa)}
+.eyebrow::before{
+  content:"";width:1.75rem;height:1px;background:currentColor;opacity:.5;
+}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.02;letter-spacing:-.015em}
+.h2{font-size:clamp(2rem,4.5vw,4rem);max-width:16ch}
+.h3{font-size:clamp(1.25rem,2vw,1.75rem);font-weight:500}
+.lede{max-width:62ch;color:color-mix(in srgb,var(--ink) 82%,transparent);font-size:clamp(1.0625rem,1.4vw,1.25rem)}
+.dark .lede{color:color-mix(in srgb,var(--paper) 78%,transparent)}
+.mono{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* ============================================================= BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;
+  padding:.95em 1.6em;border-radius:3px;
+  transition:transform .5s var(--ease-out),background .3s,color .3s,box-shadow .3s;
+  will-change:transform;position:relative;
+}
+.btn svg{width:1em;height:1em}
+.btn-primary{background:var(--moxa);color:var(--ink);box-shadow:0 1px 0 rgba(30,42,36,.2)}
+.btn-primary:hover{background:var(--moxa-deep);color:var(--paper);box-shadow:0 12px 30px -10px rgba(165,100,31,.6)}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px var(--line)}
+.dark .btn-ghost{box-shadow:inset 0 0 0 1px var(--line-light)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--jade);color:var(--jade)}
+.dark .btn-ghost:hover{color:var(--paper);box-shadow:inset 0 0 0 1px var(--sage)}
+
+/* ============================================================= FIXED LAYERS */
+/* Paper grain overlay */
+.grain{
+  position:fixed;inset:0;z-index:2;pointer-events:none;
+  opacity:.4;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Qi-line meridian rail */
+.qi-rail{
+  position:fixed;left:0;top:0;height:100vh;width:var(--rail);
+  z-index:4;pointer-events:none;
+}
+.qi-rail svg{width:100%;height:100%}
+.qi-path{
+  fill:none;stroke:url(#qiGrad);stroke-width:1.5;
+  vector-effect:non-scaling-stroke;
+  filter:drop-shadow(0 0 3px rgba(62,107,85,.35));
+}
+.qi-track{
+  fill:none;stroke:var(--ink);opacity:.08;stroke-width:1.5;
+  vector-effect:non-scaling-stroke;
+}
+.qi-node{
+  position:absolute;left:50%;width:9px;height:9px;border-radius:50%;
+  transform:translate(-50%,-50%) scale(.75);
+  background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--sage);
+  transition:transform .6s var(--ease-out),box-shadow .6s,background .6s;
+}
+.qi-node::after{
+  content:"";position:absolute;inset:-7px;border-radius:50%;
+  border:1px solid var(--moxa);opacity:0;transform:scale(.5);
+}
+.qi-node.active{
+  background:var(--moxa);
+  box-shadow:inset 0 0 0 1.5px var(--moxa),0 0 14px 2px rgba(200,130,60,.5);
+  transform:translate(-50%,-50%) scale(1);
+}
+.qi-node.active::after{animation:ping 1.6s var(--ease-out)}
+@keyframes ping{0%{opacity:.8;transform:scale(.5)}100%{opacity:0;transform:scale(1.9)}}
+
+/* Custom cursor (desktop pointer only) */
+.cursor,.cursor-dot{
+  position:fixed;top:0;left:0;z-index:900;pointer-events:none;
+  border-radius:50%;mix-blend-mode:difference;opacity:0;
+}
+.cursor{width:34px;height:34px;border:1px solid #fff;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .3s,background .25s}
+.cursor-dot{width:5px;height:5px;background:#fff;transform:translate(-50%,-50%);transition:opacity .3s}
+.cursor.hover{width:56px;height:56px;background:rgba(255,255,255,.08)}
+body.cursor-on{cursor:none}
+body.cursor-on a,body.cursor-on button{cursor:none}
+
+/* ============================================================= NAV */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem var(--gutter);
+  transition:padding .4s var(--ease-out),background .4s,box-shadow .4s,backdrop-filter .4s;
+}
+.site-nav.condensed{
+  padding:.75rem var(--gutter);
+  background:color-mix(in srgb,var(--paper) 82%,transparent);
+  backdrop-filter:blur(12px) saturate(1.2);
+  box-shadow:0 1px 0 var(--line);
+}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--font-display);font-size:1.15rem;letter-spacing:-.01em;z-index:210}
+.brand .mark{width:30px;height:30px;flex:none}
+.brand .mark circle{fill:none;stroke:var(--jade);stroke-width:1.5}
+.brand .mark line{stroke:var(--moxa-deep);stroke-width:1.5;stroke-linecap:round}
+.brand .mark .dot{fill:var(--moxa-deep);stroke:none}
+
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.95rem;position:relative;padding:.25rem 0;color:color-mix(in srgb,var(--ink) 78%,transparent)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--jade);transition:width .3s var(--ease-out)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+
+.nav-toggle{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;z-index:210}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);transition:transform .4s var(--ease-out),opacity .3s}
+.nav-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-open .nav-toggle span:nth-child(2){opacity:0}
+.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile overlay */
+.nav-overlay{
+  position:fixed;inset:0;z-index:205;background:var(--ink);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;gap:.25rem;
+  padding:var(--gutter);
+  clip-path:inset(0 0 100% 0);
+  visibility:hidden;
+}
+.nav-open .nav-overlay{visibility:visible}
+.nav-overlay a.ov-link{font-family:var(--font-display);font-size:clamp(2.25rem,9vw,3.5rem);line-height:1.15;color:var(--paper);overflow:hidden;display:block}
+.nav-overlay a.ov-link .ovi{display:inline-block}
+.nav-overlay .ov-meta{margin-top:2.5rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.12em;color:var(--sage);display:flex;flex-direction:column;gap:.75rem}
+.nav-overlay .ov-meta a{color:var(--paper)}
+.nav-overlay .btn{align-self:flex-start;margin-top:2rem}
+
+/* ============================================================= HERO */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:6rem;padding-bottom:3rem}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,5rem);align-items:center;width:100%}
+.hero-headline{
+  font-size:clamp(2.75rem,7vw,7rem);font-weight:300;line-height:.95;letter-spacing:-.02em;
+  margin:.5rem 0 1.75rem;
+}
+.hero-headline .line{display:block;overflow:hidden;padding-bottom:.04em}
+.hero-headline .line-inner{display:block}
+.em-word{position:relative;font-style:italic;font-weight:400;color:var(--jade)}
+.em-underline{
+  position:absolute;left:0;bottom:.06em;width:100%;height:.09em;
+  background:var(--moxa);transform-origin:left;transform:scaleX(1);border-radius:2px;
+}
+.preanim .em-underline{transform:scaleX(0)}
+.hero .lede{margin-bottom:2rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+.hero-trust{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;color:var(--jade);text-transform:uppercase}
+.hero-trust b{color:var(--moxa-deep);font-weight:400}
+
+/* Hero visual */
+.hero-visual{position:relative;aspect-ratio:4/5}
+.hero-figure{width:100%;height:100%;overflow:visible}
+.hero-figure .frame{fill:var(--paper-2);stroke:var(--line);stroke-width:1}
+.hero-figure .meridian{fill:none;stroke:var(--jade);stroke-width:1.25;opacity:.8}
+.hero-figure .meridian-2{fill:none;stroke:var(--moxa);stroke-width:1;opacity:.55}
+.hero-figure .pt{fill:var(--jade)}
+.hero-figure .pt-glow{fill:var(--moxa)}
+.hero-figure .silhouette{fill:var(--ink);opacity:.9}
+.float-node{transform-box:fill-box;transform-origin:center}
+
+/* ============================================================= TRUST */
+.trust{background:var(--paper-2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3rem);margin-bottom:clamp(3rem,6vw,4.5rem)}
+.stat{border-top:1px solid var(--line);padding-top:1.25rem}
+.stat .num{font-family:var(--font-display);font-size:clamp(2.75rem,6vw,4.75rem);font-weight:300;line-height:1;letter-spacing:-.02em;color:var(--jade)}
+.stat .num .suf{color:var(--moxa-deep)}
+.stat .lbl{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:color-mix(in srgb,var(--ink) 65%,transparent);margin-top:.6rem}
+
+/* Marquee */
+.marquee{position:relative;overflow:hidden;padding:1.1rem 0;border-block:1px solid var(--line);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.marquee-track{display:flex;gap:0;width:max-content;will-change:transform}
+.marquee-item{display:inline-flex;align-items:center;gap:2.5rem;padding-right:2.5rem;font-family:var(--font-display);font-size:clamp(1.25rem,2.4vw,2rem);font-weight:400;color:color-mix(in srgb,var(--ink) 80%,transparent);white-space:nowrap}
+.marquee-item::after{content:"✧";color:var(--moxa);font-size:.7em}
+
+/* ============================================================= ATLAS (What we heal) */
+.atlas-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem}
+.pill{
+  font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;
+  padding:.55em 1em;border-radius:100px;box-shadow:inset 0 0 0 1px var(--line);
+  color:color-mix(in srgb,var(--ink) 70%,transparent);transition:.3s;
+}
+.pill:hover{box-shadow:inset 0 0 0 1px var(--jade);color:var(--jade)}
+.pill.active{background:var(--ink);color:var(--paper);box-shadow:none}
+.atlas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.atlas-item{
+  background:var(--paper);padding:1.5rem 1.4rem 1.6rem;
+  display:flex;flex-direction:column;gap:.5rem;min-height:150px;
+  transition:background .35s;position:relative;
+}
+.atlas-item:hover{background:var(--paper-2)}
+.atlas-item .code{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;color:var(--jade);text-transform:uppercase}
+.atlas-item h3{font-family:var(--font-display);font-size:1.2rem;font-weight:500;line-height:1.1}
+.atlas-item p{font-size:.9rem;line-height:1.5;color:color-mix(in srgb,var(--ink) 68%,transparent)}
+.atlas-item .arrow{margin-top:auto;font-family:var(--font-mono);font-size:.7rem;color:var(--moxa-deep);opacity:0;transform:translateX(-4px);transition:.3s}
+.atlas-item:hover .arrow{opacity:1;transform:translateX(0)}
+
+/* ============================================================= APPROACH (dark) */
+.dark{background:var(--ink);color:var(--paper)}
+.approach h2{font-size:clamp(2rem,4.5vw,4rem);max-width:20ch;margin-bottom:1.5rem}
+.approach h2 em{font-style:italic;color:var(--moxa)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3rem);margin-top:clamp(3.5rem,7vw,5rem)}
+.step{position:relative;padding-top:2rem;border-top:1px solid var(--line-light)}
+.step .idx{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;color:var(--moxa)}
+.step h3{font-family:var(--font-display);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:400;margin:.75rem 0 .6rem}
+.step p{color:color-mix(in srgb,var(--paper) 72%,transparent);font-size:1rem;max-width:34ch}
+
+/* ============================================================= SERVICES */
+.services-head{margin-bottom:2.5rem}
+.services-viewport{overflow:hidden}
+.services-track{display:flex;gap:1.25rem}
+.service-card{
+  flex:0 0 clamp(260px,80vw,340px);
+  background:var(--paper-2);border:1px solid var(--line);border-radius:4px;
+  padding:1.6rem;display:flex;flex-direction:column;min-height:300px;
+  transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,42,36,.35);border-color:var(--moxa)}
+.service-photo{
+  aspect-ratio:16/10;border-radius:3px;margin-bottom:1.2rem;
+  background:linear-gradient(135deg,var(--mist),var(--sage));position:relative;overflow:hidden;
+}
+.service-photo .glyph{position:absolute;inset:0;display:grid;place-items:center;color:var(--jade);opacity:.55}
+.service-photo .glyph svg{width:40%;height:40%}
+.service-card .code{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;color:var(--jade);margin-bottom:.5rem}
+.service-card h3{font-family:var(--font-display);font-size:1.5rem;font-weight:500;margin-bottom:.6rem}
+.service-card p{font-size:.95rem;color:color-mix(in srgb,var(--ink) 70%,transparent);line-height:1.5}
+.services-hint{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--ink) 55%,transparent);margin-top:1.5rem;display:flex;align-items:center;gap:.6rem}
+
+/* ============================================================= TEAM */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.member .portrait{
+  aspect-ratio:4/5;border-radius:4px;overflow:hidden;position:relative;
+  background:linear-gradient(160deg,var(--ink-soft),var(--jade));
+  clip-path:inset(0 0 0 0);
+}
+.member .portrait .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--mist);opacity:.5}
+.member .portrait .ph svg{width:38%}
+.member .meta{margin-top:1.5rem}
+.member .name{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:400;line-height:1;overflow:hidden}
+.member .role{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);margin:.9rem 0 1rem}
+.member .bio{font-size:1rem;color:color-mix(in srgb,var(--ink) 78%,transparent);max-width:44ch;margin-bottom:1rem}
+.member .readbio{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--moxa-deep);border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* ============================================================= TESTIMONIALS */
+.reviews{background:var(--paper-2);overflow:hidden}
+.review-rows{display:flex;flex-direction:column;gap:1.25rem;margin-top:1rem}
+.review-row{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.review-track{display:flex;gap:1.25rem;width:max-content;will-change:transform}
+.review-card{
+  flex:0 0 clamp(280px,44vw,420px);background:var(--paper);border:1px solid var(--line);
+  border-radius:4px;padding:1.6rem;display:flex;flex-direction:column;gap:1rem;
+}
+.review-card .stars{color:var(--moxa);letter-spacing:.15em;font-size:.85rem}
+.review-card blockquote{font-family:var(--font-display);font-size:1.15rem;font-weight:400;line-height:1.35;font-style:italic}
+.review-card cite{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--jade);font-style:normal;margin-top:auto}
+.review-agg{margin-top:2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--ink) 65%,transparent)}
+.review-agg a{color:var(--jade);border-bottom:1px solid var(--line)}
+.review-agg a:hover{border-color:var(--jade)}
+
+/* ============================================================= BOOK */
+.book{background:var(--ink);color:var(--paper);text-align:center}
+.book h2{font-size:clamp(2.25rem,6vw,5rem);font-weight:300;line-height:1;letter-spacing:-.02em;max-width:16ch;margin-inline:auto}
+.book h2 em{font-style:italic;color:var(--moxa)}
+.book .lede{margin:1.75rem auto 2.5rem;text-align:center}
+.book-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.book .btn-primary{font-size:1.05rem;padding:1.1em 2em}
+.book-call{color:var(--paper);box-shadow:inset 0 0 0 1px var(--line-light)}
+
+/* ============================================================= CONTACT / FOOTER */
+.contact{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-light)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2.5rem,6vw,5rem)}
+.contact-info dl{display:grid;gap:1.5rem}
+.contact-info dt{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.35rem}
+.contact-info dd{font-size:1.1rem;line-height:1.5}
+.contact-info dd a:hover{color:var(--moxa)}
+.service-area{margin-top:2rem;color:color-mix(in srgb,var(--paper) 62%,transparent);font-size:.95rem;max-width:46ch}
+
+.newsletter label{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:.5rem}
+.newsletter .field{margin-bottom:1.1rem}
+.newsletter input{
+  width:100%;padding:.9em 1em;background:var(--ink-soft);border:1px solid var(--line-light);
+  border-radius:3px;color:var(--paper);font-family:var(--font-body);font-size:1rem;
+}
+.newsletter input::placeholder{color:color-mix(in srgb,var(--paper) 40%,transparent)}
+.newsletter input:focus{border-color:var(--sage)}
+.newsletter .btn{margin-top:.25rem}
+.form-msg{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;margin-top:1rem;min-height:1.2em}
+.form-msg.ok{color:var(--moxa)}
+.form-msg.err{color:var(--clay)}
+
+.footer-bottom{border-top:1px solid var(--line-light);margin-top:clamp(3rem,6vw,5rem);padding-top:2rem;
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem}
+.socials{display:flex;gap:1.25rem;flex-wrap:wrap}
+.socials a{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 72%,transparent)}
+.socials a:hover{color:var(--moxa)}
+.legal{display:flex;gap:1.5rem;flex-wrap:wrap;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:color-mix(in srgb,var(--paper) 50%,transparent)}
+.legal a:hover{color:var(--paper)}
+.copyright{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:color-mix(in srgb,var(--paper) 45%,transparent);width:100%}
+
+/* ============================================================= REVEAL (pre-hide) */
+.preanim .line-inner{transform:translateY(110%)}
+.preanim [data-reveal]{opacity:0}
+.preanim .split-word > span{transform:translateY(105%)}
+.preanim .em-underline{transform:scaleX(0)}
+.split-word{display:inline-block;overflow:hidden;vertical-align:top}
+.split-word > span{display:inline-block}
+
+/* ============================================================= RESPONSIVE */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-visual{max-width:440px;order:-1;aspect-ratio:16/11}
+  .atlas-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  /* Six links + wordmark + button need desktop width — use the overlay menu below 1025px */
+  .nav-links,.nav-right .btn{display:none}
+  .nav-toggle{display:flex}
+}
+@media (max-width:768px){
+  .stats{grid-template-columns:1fr;gap:0}
+  .stat{padding-block:1.25rem;border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr;gap:3rem}
+  .book-cta,.hero-cta{flex-direction:column;align-items:stretch}
+  .book-cta{align-items:center}
+  .hero-cta .btn{justify-content:center}
+}
+@media (max-width:640px){
+  :root{--rail:26px}
+  .qi-node{width:7px;height:7px}
+  .atlas-grid{grid-template-columns:1fr}
+  .review-card{flex-basis:80vw}
+  .nav-overlay a.ov-link{font-size:clamp(2rem,11vw,2.75rem)}
+}
+
+/* ============================================================= REDUCED MOTION */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .qi-node.active::after{animation:none}
+  .cursor,.cursor-dot{display:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#hero">Skip to content</a>
+
+<!-- ===================== FIXED LAYERS ===================== -->
+<div class="grain" aria-hidden="true"></div>
+
+<div class="qi-rail" aria-hidden="true">
+  <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="qiGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3E6B55"/>
+        <stop offset="0.55" stop-color="#557E63"/>
+        <stop offset="1" stop-color="#C8823C"/>
+      </linearGradient>
+    </defs>
+    <path class="qi-track" d="M50 0 Q82 55 50 111 Q18 166 50 222 Q82 277 50 333 Q18 388 50 444 Q82 500 50 555 Q18 611 50 666 Q82 722 50 777 Q18 833 50 888 Q82 944 50 1000"/>
+    <path class="qi-path" id="qiPath" d="M50 0 Q82 55 50 111 Q18 166 50 222 Q82 277 50 333 Q18 388 50 444 Q82 500 50 555 Q18 611 50 666 Q82 722 50 777 Q18 833 50 888 Q82 944 50 1000"/>
+  </svg>
+  <div class="qi-node" data-node="0" style="top:0%"></div>
+  <div class="qi-node" data-node="1" style="top:11.1%"></div>
+  <div class="qi-node" data-node="2" style="top:22.2%"></div>
+  <div class="qi-node" data-node="3" style="top:33.3%"></div>
+  <div class="qi-node" data-node="4" style="top:44.4%"></div>
+  <div class="qi-node" data-node="5" style="top:55.5%"></div>
+  <div class="qi-node" data-node="6" style="top:66.6%"></div>
+  <div class="qi-node" data-node="7" style="top:77.7%"></div>
+  <div class="qi-node" data-node="8" style="top:88.8%"></div>
+</div>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="site-nav" id="nav">
+  <a class="brand" href="#hero" aria-label="Healing with Zen — home">
+    <svg class="mark" viewBox="0 0 30 30" aria-hidden="true">
+      <circle cx="15" cy="15" r="11"/>
+      <line x1="15" y1="4" x2="15" y2="26"/>
+      <circle class="dot" cx="15" cy="15" r="2.2"/>
+    </svg>
+    <span>Healing&nbsp;with&nbsp;Zen</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#heal">Heal</a>
+    <a href="#how">How</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <a class="btn btn-primary magnetic" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <a class="ov-link" href="#heal"><span class="ovi">Heal</span></a>
+  <a class="ov-link" href="#how"><span class="ovi">How we heal</span></a>
+  <a class="ov-link" href="#services"><span class="ovi">Services</span></a>
+  <a class="ov-link" href="#team"><span class="ovi">Team</span></a>
+  <a class="ov-link" href="#reviews"><span class="ovi">Reviews</span></a>
+  <a class="ov-link" href="#contact"><span class="ovi">Contact</span></a>
+  <div class="ov-meta">
+    <a href="tel:6263779596">(626) 377-9596</a>
+    <span>221 E. Walnut St, Ste 134 · Pasadena</span>
+  </div>
+  <a class="btn btn-primary" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+</div>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero wrap" id="hero" aria-labelledby="hero-h1">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="pt">DU-20</span> · Pasadena Acupuncture</p>
+      <h1 class="hero-headline" id="hero-h1">
+        <span class="line"><span class="line-inner">Medicine that</span></span>
+        <span class="line"><span class="line-inner"><em class="em-word">listens<span class="em-underline"></span></em> to the</span></span>
+        <span class="line"><span class="line-inner">whole of you.</span></span>
+      </h1>
+      <p class="lede" data-reveal>Acupuncture, herbal medicine, and holistic care in Pasadena — supporting hormones, digestion, pain, fertility, and calm since 2013.</p>
+      <div class="hero-cta" data-reveal>
+        <a class="btn btn-primary magnetic" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+        <a class="btn btn-ghost" href="#heal">Explore what we heal</a>
+      </div>
+      <p class="hero-trust" data-reveal>✧&nbsp; Serving Pasadena since <b>2013</b> · Hundreds of <b>5-star</b> experiences &nbsp;✧</p>
+    </div>
+
+    <!-- PHOTO SLOT: practitioner portrait — abstract meridian figure until real photography drops in -->
+    <div class="hero-visual" data-reveal>
+      <svg class="hero-figure" viewBox="0 0 320 400" role="img" aria-label="Abstract illustration of acupuncture meridian lines flowing through a seated figure">
+        <rect class="frame" x="1" y="1" width="318" height="398" rx="4"/>
+        <!-- seated silhouette -->
+        <path class="silhouette" d="M160 120c22 0 38 17 38 40 0 15-7 26-17 33 34 10 58 40 63 84 2 15 3 34 3 51H73c0-17 1-36 3-51 5-44 29-74 63-84-10-7-17-18-17-33 0-23 16-40 38-40Z" opacity=".14"/>
+        <!-- meridians -->
+        <path class="meridian" d="M160 60 C120 130 200 190 160 260 C130 310 190 350 160 400"/>
+        <path class="meridian-2" d="M110 90 C90 170 140 230 120 320"/>
+        <path class="meridian-2" d="M210 90 C230 170 180 230 200 320"/>
+        <path class="meridian" d="M70 200 C130 180 190 220 250 200" opacity=".4"/>
+        <!-- fixed acupoints on the figure -->
+        <circle class="pt-glow" cx="160" cy="60" r="4"/>
+        <circle class="pt" cx="160" cy="150" r="3.5"/>
+        <circle class="pt" cx="160" cy="260" r="3.5"/>
+        <circle class="pt-glow" cx="120" cy="320" r="3.5"/>
+        <circle class="pt-glow" cx="200" cy="320" r="3.5"/>
+        <circle class="pt" cx="110" cy="90" r="3"/>
+        <circle class="pt" cx="210" cy="90" r="3"/>
+        <!-- ambient floating nodes -->
+        <circle class="float-node pt-glow" cx="40" cy="70" r="3" opacity=".7"/>
+        <circle class="float-node pt" cx="285" cy="130" r="2.5" opacity=".7"/>
+        <circle class="float-node pt-glow" cx="55" cy="300" r="2.5" opacity=".6"/>
+        <circle class="float-node pt" cx="280" cy="330" r="3" opacity=".6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST ===================== -->
+<section class="trust section-pad" id="trust" aria-labelledby="trust-h">
+  <div class="wrap">
+    <p class="eyebrow"><span class="pt">ST-36</span> · Why patients stay</p>
+    <h2 class="h2 split" id="trust-h" data-reveal style="margin-bottom:clamp(2.5rem,5vw,3.5rem)">A quieter kind of care, trusted for over a decade.</h2>
+    <div class="stats">
+      <div class="stat" data-reveal>
+        <div class="num" data-count="2013" data-from="1990">2013</div>
+        <div class="lbl">Caring for Pasadena since</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="num" data-count="500" data-suffix="+">500<span class="suf">+</span></div>
+        <div class="lbl">Five-star experiences</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="num" data-count="30" data-suffix="+">30<span class="suf">+</span></div>
+        <div class="lbl">Conditions treated</div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" data-marquee data-speed="40" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Migraines</span><span class="marquee-item">Anxiety</span><span class="marquee-item">Fertility</span><span class="marquee-item">Back pain</span><span class="marquee-item">Insomnia</span><span class="marquee-item">Digestion</span><span class="marquee-item">Allergies</span><span class="marquee-item">Vertigo</span><span class="marquee-item">Neck &amp; shoulder pain</span><span class="marquee-item">Skin issues</span><span class="marquee-item">Postpartum care</span><span class="marquee-item">Cancer care support</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT WE HEAL (ATLAS) ===================== -->
+<section class="section-pad" id="heal" aria-labelledby="heal-h">
+  <div class="wrap">
+    <div class="atlas-head">
+      <div>
+        <p class="eyebrow"><span class="pt">LI-4</span> · What we heal</p>
+        <h2 class="h2 split" id="heal-h">A whole atlas of relief, not a menu buried three clicks deep.</h2>
+      </div>
+    </div>
+    <div class="filters" role="tablist" aria-label="Filter conditions by category" data-reveal>
+      <button class="pill active" role="tab" aria-selected="true" data-filter="all">All</button>
+      <button class="pill" role="tab" aria-selected="false" data-filter="general">General Health</button>
+      <button class="pill" role="tab" aria-selected="false" data-filter="pain">Pain</button>
+      <button class="pill" role="tab" aria-selected="false" data-filter="womens">Women's Health</button>
+      <button class="pill" role="tab" aria-selected="false" data-filter="mental">Mental Health</button>
+      <button class="pill" role="tab" aria-selected="false" data-filter="other">Other</button>
+    </div>
+
+    <div class="atlas-grid" id="atlasGrid" style="margin-top:1.75rem">
+      <!-- General Health -->
+      <a class="atlas-item" data-cat="general" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">LU-7</span><h3>Ear, Nose &amp; Throat</h3>
+        <p>Clearer sinuses and calmer ears — without another round of antibiotics.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="general" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">ST-25</span><h3>Digestion &amp; Weight</h3>
+        <p>Steadier digestion and appetite, so your body finds its own balance.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="general" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">LI-11</span><h3>Allergies &amp; Immunity</h3>
+        <p>Fewer flare-ups as we calm an over-reactive immune response.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="general" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">SP-10</span><h3>Skin Issues</h3>
+        <p>Calmer, clearer skin — treated from the inside out.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="general" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">GB-20</span><h3>Migraines &amp; Headaches</h3>
+        <p>Fewer, milder migraine days — without another prescription.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="general" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">SI-3</span><h3>Pediatrics</h3>
+        <p>Gentle, needle-light care that kids actually tolerate.</p><span class="arrow">Book →</span></a>
+      <!-- Pain -->
+      <a class="atlas-item" data-cat="pain" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">KI-1</span><h3>Foot Pain</h3>
+        <p>Get back on your feet — plantar and heel pain eased at the source.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="pain" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">GB-21</span><h3>Neck &amp; Shoulder Pain</h3>
+        <p>Release the knots that desk days and stress leave behind.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="pain" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">ST-35</span><h3>Knee Pain</h3>
+        <p>More mobility and less ache, so movement feels easy again.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="pain" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">BL-40</span><h3>Back Pain</h3>
+        <p>Loosen tight, guarded muscles and quiet the pain signal.</p><span class="arrow">Book →</span></a>
+      <!-- Women's Health -->
+      <a class="atlas-item" data-cat="womens" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">SP-6</span><h3>Fertility</h3>
+        <p>Supportive, evidence-informed care through every cycle and IVF stage.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="womens" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">REN-4</span><h3>Pregnancy</h3>
+        <p>Ease nausea, aches, and anxiety with pregnancy-safe treatment.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="womens" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">ST-36</span><h3>Postpartum Care</h3>
+        <p>Restore energy, sleep, and hormones after birth.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="womens" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">LR-3</span><h3>Gynecological Issues</h3>
+        <p>Relief for recurring, stubborn issues that keep coming back.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="womens" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">SP-8</span><h3>PMS</h3>
+        <p>Smoother cycles with less cramping, bloating, and mood swing.</p><span class="arrow">Book →</span></a>
+      <!-- Mental Health -->
+      <a class="atlas-item" data-cat="mental" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">HT-7</span><h3>Stress &amp; Anxiety</h3>
+        <p>Down-shift a wired nervous system into genuine calm.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="mental" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">PC-6</span><h3>Addiction Recovery</h3>
+        <p>Ease cravings and withdrawal as part of your recovery.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="mental" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">HT-7</span><h3>Insomnia</h3>
+        <p>Fall asleep faster and stay asleep — naturally.</p><span class="arrow">Book →</span></a>
+      <!-- Other -->
+      <a class="atlas-item" data-cat="other" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">REN-6</span><h3>Cancer Care Support</h3>
+        <p>Gentle support for the side effects of treatment and recovery.</p><span class="arrow">Book →</span></a>
+      <a class="atlas-item" data-cat="other" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">
+        <span class="code" aria-hidden="true">GB-20</span><h3>Vertigo &amp; Dizziness</h3>
+        <p>Steady the spins and get your balance back.</p><span class="arrow">Book →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW WE HEAL (dark) ===================== -->
+<section class="dark approach section-pad" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <p class="eyebrow"><span class="pt">REN-6</span> · Our approach</p>
+    <h2 class="split" id="how-h" data-reveal>We treat the <em>root</em>, not just the symptom — and we take the time to find it.</h2>
+    <p class="lede" data-reveal>Every visit starts with an unhurried intake: your history, your constitution, how you actually feel day to day. From there we build an individualized plan — gentle acupuncture, custom herbs, and small changes that hold. Care for the physical, the emotional, and the spiritual, all at once.</p>
+    <div class="steps">
+      <div class="step" data-reveal>
+        <div class="idx">01</div><h3>Listen</h3>
+        <p>A longer first visit to understand your health history and body constitution before a single needle.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="idx">02</div><h3>Balance</h3>
+        <p>Gentle, individualized acupuncture and herbal formulas that move stuck qi and settle the nervous system.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="idx">03</div><h3>Sustain</h3>
+        <p>A realistic plan — nutrition, lifestyle, herbs — you can actually keep between visits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section-pad" id="services" aria-labelledby="services-h">
+  <div class="wrap services-head">
+    <p class="eyebrow"><span class="pt">SP-6</span> · What we offer</p>
+    <h2 class="h2 split" id="services-h">Modalities, chosen for you — never one-size-fits-all.</h2>
+  </div>
+  <div class="wrap">
+    <div class="services-viewport" id="servicesViewport">
+      <div class="services-track" id="servicesTrack">
+        <!-- PHOTO SLOT per card -->
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 21 21 3M14 4l6 6M8 10l6 6"/></svg></span></div>
+          <div class="code">SP-6</div><h3>Acupuncture</h3>
+          <p>Gentle, precise needling to move stuck qi and calm the nervous system.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11ZM6 14c4 0 6-3 6-6"/></svg></span></div>
+          <div class="code">LU-9</div><h3>Herbal Therapy</h3>
+          <p>Custom formulas that extend your results in the weeks between visits.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="10" r="6"/><path d="M12 16v5M8 21h8"/></svg></span></div>
+          <div class="code">BL-17</div><h3>Cupping</h3>
+          <p>Releases tension and improves circulation in tight, achy muscles.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></span></div>
+          <div class="code">ST-3</div><h3>Cosmetic Acupuncture</h3>
+          <p>A natural lift and glow — no injectables, no downtime.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 14c4-8 12-8 16 0M4 14c4 6 12 6 16 0"/></svg></span></div>
+          <div class="code">LI-20</div><h3>Facial Gua Sha</h3>
+          <p>Sculpting, lymph-draining strokes for brighter, calmer skin.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/></svg></span></div>
+          <div class="code">DU-24</div><h3>Microneedling</h3>
+          <p>Stimulates collagen for firmer, smoother, healthier skin.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M9 20h6M12 16v4"/></svg></span></div>
+          <div class="code">HT-5</div><h3>Online Telemedicine</h3>
+          <p>Herbal and lifestyle guidance from wherever you are.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3c3 3 3 6 0 9-3-3-3-6 0-9ZM12 12v9"/><path d="M12 21c-4 0-6-3-6-6 3 0 6 2 6 6Z"/></svg></span></div>
+          <div class="code">ST-36</div><h3>Whole-Food Nutrition</h3>
+          <p>Eat for your constitution with a plan that fits real life.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span></div>
+          <div class="code">DU-14</div><h3>Red Light Therapy</h3>
+          <p>Low-level light to speed recovery and calm inflammation.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 8a6 6 0 0 0-12 0c0 4 3 5 3 9a3 3 0 0 0 6 0c0-4 3-5 3-9Z"/><circle cx="12" cy="8" r="1.5"/></svg></span></div>
+          <div class="code">SI-19</div><h3>Earseeds</h3>
+          <p>Tiny seeds that keep your treatment working between visits.</p>
+        </article>
+        <article class="service-card" data-reveal>
+          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M3 12h18M12 8V6a2 2 0 1 1 2 2M12 8V6a2 2 0 1 0-2 2"/></svg></span></div>
+          <div class="code">REN-8</div><h3>Gift Certificates</h3>
+          <p>Give the gift of rest, relief, and genuine care.</p>
+        </article>
+      </div>
+    </div>
+    <p class="services-hint" data-scroll-hint>Drag or scroll to explore all services <span aria-hidden="true">→</span></p>
+  </div>
+</section>
+
+<!-- ===================== PRACTITIONERS ===================== -->
+<section class="section-pad" id="team" aria-labelledby="team-h">
+  <div class="wrap">
+    <p class="eyebrow"><span class="pt">HT-7</span> · Your care team</p>
+    <h2 class="h2 split" id="team-h" style="margin-bottom:clamp(2.5rem,5vw,3.5rem)">Two practitioners who treat you like a whole person.</h2>
+    <div class="team-grid">
+      <article class="member" data-reveal>
+        <!-- PHOTO SLOT: Zen Tuan headshot -->
+        <div class="portrait"><span class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="9" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg></span></div>
+        <div class="meta">
+          <h3 class="name split">Zen Tuan</h3>
+          <p class="role">Acupuncturist · Herbalist · Clinical Director</p>
+          <p class="bio">Zen founded Healing with Zen in 2013 and has spent over a decade helping Pasadena find relief the gentle way. She listens first, treats the whole person, and builds a plan you can actually keep.</p>
+          <a class="readbio" href="#" aria-label="Read Zen Tuan's full bio">Read bio</a>
+        </div>
+      </article>
+      <article class="member" data-reveal>
+        <!-- PHOTO SLOT: Kiera Layne headshot -->
+        <div class="portrait"><span class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="9" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg></span></div>
+        <div class="meta">
+          <h3 class="name split">Kiera Layne</h3>
+          <p class="role">Acupuncturist · Herbalist</p>
+          <p class="bio">Kiera blends classical acupuncture with modern herbal medicine, with special care for women's health, fertility, and stress. Warm, thorough, and never in a hurry.</p>
+          <a class="readbio" href="#" aria-label="Read Kiera Layne's full bio">Read bio</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="reviews section-pad" id="reviews" aria-labelledby="reviews-h">
+  <div class="wrap">
+    <p class="eyebrow"><span class="pt">KI-3</span> · In their words</p>
+    <h2 class="h2 split" id="reviews-h">The results speak — and so do our patients.</h2>
+  </div>
+  <div class="review-rows" aria-label="Patient testimonials">
+    <div class="review-row" data-review-row data-speed="55" data-dir="1">
+      <div class="review-track">
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>The acupuncture and cupping instantly relieved so much of my back pain — and Zen really listens.</blockquote><cite>Kevin X.</cite></figure>
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>After one 15-minute treatment my neck's range of motion was dramatically better.</blockquote><cite>Elsa C.</cite></figure>
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>Two years in, she's relieved my osteoarthritis pain and improved my mobility.</blockquote><cite>Susan D.</cite></figure>
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>Chronic tinnitus that specialists couldn't touch — reduced dramatically after a few visits.</blockquote><cite>Rob L.</cite></figure>
+      </div>
+    </div>
+    <div class="review-row" data-review-row data-speed="55" data-dir="-1">
+      <div class="review-track">
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>Relaxing facial treatment, a natural glow, and the best sleep I'd had in ages.</blockquote><cite>Eli P.</cite></figure>
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>A few sessions fixed a lower-back problem nothing else could.</blockquote><cite>Fanny C.</cite></figure>
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>Heated beds, calm music — more spa than clinic, and she truly listens.</blockquote><cite>Kurt F.</cite></figure>
+        <figure class="review-card"><div class="stars" aria-hidden="true">★★★★★</div><blockquote>Instant relief and real care — I've already sent half my family here.</blockquote><cite>Kevin X.</cite></figure>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="review-agg" data-reveal>Hundreds of 5-star experiences across
+      <a href="https://www.google.com/maps/place/Healing+with+Zen" target="_blank" rel="noopener">Google</a> &amp;
+      <a href="https://www.yelp.com/biz/healing-with-zen-pasadena" target="_blank" rel="noopener">Yelp</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== BOOK (dark) ===================== -->
+<section class="dark book section-pad" id="book" aria-labelledby="book-h">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center"><span class="pt">LR-3</span> · Start healing</p>
+    <h2 class="split" id="book-h" data-reveal>Ready to feel like <em>yourself</em> again?</h2>
+    <p class="lede" data-reveal>Book online in under a minute. New patients get an unhurried first visit — we'll take the time to get it right.</p>
+    <div class="book-cta" data-reveal>
+      <a class="btn btn-primary magnetic" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+      <a class="btn book-call" href="tel:6263779596">Call (626) 377-9596</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== CONTACT + FOOTER ===================== -->
+<footer class="contact section-pad" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <p class="eyebrow"><span class="pt">GB-20</span> · Visit us</p>
+    <h2 class="h2 split" id="contact-h" style="margin-bottom:clamp(2.5rem,5vw,3.5rem)">Come find us in the heart of Pasadena.</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal>
+        <dl>
+          <div>
+            <dt>Address</dt>
+            <dd><a href="https://www.google.com/maps/place/Healing+with+Zen" target="_blank" rel="noopener">221 E. Walnut St, Ste 134<br>Pasadena, CA 91101</a></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:6263779596">(626) 377-9596</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@healingwithzen.com">info@healingwithzen.com</a></dd>
+          </div>
+        </dl>
+        <p class="service-area">Serving Pasadena, San Marino, Arcadia, La Cañada, Altadena &amp; the San Gabriel Valley since 2013.</p>
+        <!-- BADGE SLOT: NCCAOM / award badges -->
+      </div>
+
+      <div class="newsletter" data-reveal>
+        <form id="newsletterForm" novalidate>
+          <div class="field">
+            <label for="nl-name">Name</label>
+            <input type="text" id="nl-name" name="name" placeholder="First name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="nl-email">Email</label>
+            <input type="email" id="nl-email" name="email" placeholder="you@email.com" autocomplete="email" required>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic">Join the list</button>
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="socials">
+        <a href="https://www.instagram.com/healingwithzen/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/healingwithzen" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/channel/UC7W3C3Rfu8Wk9tsqA-pGwFw" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.yelp.com/biz/healing-with-zen-pasadena" target="_blank" rel="noopener">Yelp</a>
+        <a href="https://www.google.com/maps/place/Healing+with+Zen" target="_blank" rel="noopener">Google</a>
+      </div>
+      <div class="legal">
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <p class="copyright">© 2026 Healing with Zen — Acupuncture &amp; Herbal Remedies</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CDN LIBRARIES ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script>
+(function(){
+  "use strict";
+  var docEl = document.documentElement;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = !!(window.gsap && window.ScrollTrigger);
+
+  // Failsafe: if animations can't run, reveal everything immediately.
+  if (reduce || !hasGSAP) {
+    docEl.classList.remove('preanim');
+  }
+
+  /* ---------- MOBILE NAV (works with or without GSAP) ---------- */
+  var toggle = document.querySelector('.nav-toggle');
+  var overlay = document.getElementById('navOverlay');
+  var overlayLinks = overlay ? overlay.querySelectorAll('.ovi') : [];
+  function setMenu(open){
+    document.body.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    if (open && hasGSAP && !reduce){
+      gsap.set(overlay, {clipPath:'inset(0 0 0% 0)'});
+      gsap.fromTo(overlayLinks, {yPercent:110}, {yPercent:0, duration:.6, stagger:.06, ease:'power3.out', delay:.05});
+    } else if (!open && hasGSAP && !reduce){
+      gsap.set(overlay, {clipPath:'inset(0 0 100% 0)'});
+    }
+  }
+  if (toggle){
+    toggle.addEventListener('click', function(){ setMenu(!document.body.classList.contains('nav-open')); });
+    overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && document.body.classList.contains('nav-open')) setMenu(false); });
+  }
+
+  /* ---------- NEWSLETTER (progressive, no backend) ---------- */
+  var form = document.getElementById('newsletterForm');
+  if (form){
+    var msg = document.getElementById('formMsg');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !validEmail){
+        msg.textContent = 'Please add your name and a valid email.';
+        msg.className = 'form-msg err';
+        return;
+      }
+      msg.textContent = 'Thank you, ' + name + ' — you’re on the list. Breathe easy. ✧';
+      msg.className = 'form-msg ok';
+      form.reset();
+    });
+  }
+
+  if (!hasGSAP) return;   // Everything below needs GSAP.
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- SPLITTER (custom line/word splitter) ---------- */
+  function splitWords(el){
+    if (el.dataset.split) return;
+    el.dataset.split = '1';
+    var text = el.textContent;
+    el.textContent = '';
+    var frag = document.createDocumentFragment();
+    text.split(/(\s+)/).forEach(function(chunk){
+      if (chunk.trim() === ''){ frag.appendChild(document.createTextNode(chunk)); return; }
+      var mask = document.createElement('span'); mask.className = 'split-word';
+      var inner = document.createElement('span'); inner.textContent = chunk;
+      mask.appendChild(inner); frag.appendChild(mask);
+    });
+    el.appendChild(frag);
+    return el.querySelectorAll('.split-word > span');
+  }
+
+  /* ---------- REDUCED MOTION: static + qi-line drawn, nodes lit ---------- */
+  if (reduce){
+    document.querySelectorAll('.qi-node').forEach(function(n){ n.classList.add('active'); });
+    return;
+  }
+
+  /* ---------- LENIS SMOOTH SCROLL ---------- */
+  var lenis = new Lenis({ duration:1.1, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(time){ lenis.raf(time*1000); });
+  gsap.ticker.lagSmoothing(0);
+  // Anchor links through Lenis
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (target){ e.preventDefault(); lenis.scrollTo(target, {offset:-10}); }
+    });
+  });
+
+  /* ---------- QI-LINE: draw on total scroll progress ---------- */
+  var qiPath = document.getElementById('qiPath');
+  var len = qiPath.getTotalLength();
+  gsap.set(qiPath, {strokeDasharray:len, strokeDashoffset:len});
+  ScrollTrigger.create({
+    start:0, end:'max', scrub:.6,
+    onUpdate:function(self){ gsap.set(qiPath, {strokeDashoffset: len*(1-self.progress)}); }
+  });
+
+  /* ---------- QI-NODES: light progressively as sections enter ---------- */
+  var sectionOrder = ['hero','trust','heal','how','services','team','reviews','book','contact'];
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.qi-node'));
+  function lightUpTo(idx){ nodes.forEach(function(n,i){ n.classList.toggle('active', i<=idx); }); }
+  sectionOrder.forEach(function(id, idx){
+    var sec = document.getElementById(id);
+    if (!sec) return;
+    ScrollTrigger.create({
+      trigger:sec, start:'top 65%', end:'bottom 35%',
+      onEnter:function(){ lightUpTo(idx); },
+      onEnterBack:function(){ lightUpTo(idx); }
+    });
+  });
+  nodes[0].classList.add('active');
+
+  /* ---------- HERO LOAD TIMELINE ---------- */
+  // Drop the CSS pre-hide guard BEFORE any gsap.set, so GSAP reads clean
+  // transforms (no translateY(110%) baked in as pixels) and owns the inline
+  // hidden states itself. All setup below is synchronous → no flash before paint.
+  docEl.classList.remove('preanim');
+
+  // Explicit hidden start-states (inline) so nothing depends on the .preanim CSS.
+  gsap.set('.hero .eyebrow', {opacity:0, y:16});
+  gsap.set('.hero-headline .line-inner', {yPercent:110});
+  gsap.set('.em-underline', {scaleX:0});
+  gsap.set(['.hero .lede','.hero-cta','.hero-trust','.hero-visual'], {opacity:0, y:20});
+
+  var tl = gsap.timeline({ delay:.15, defaults:{ease:'expo.out'} });
+  tl.to('.grain', {opacity:.4, duration:1.2}, 0)
+    .to('.hero .eyebrow', {opacity:1, y:0, duration:.9}, .1)
+    .to('.hero-headline .line-inner', {yPercent:0, duration:1.15, stagger:.08}, .2)
+    .to('.em-underline', {scaleX:1, duration:.9, ease:'power3.out'}, '-=.5')
+    .to(['.hero .lede','.hero-cta','.hero-trust'], {opacity:1, y:0, duration:.9, stagger:.1}, '-=.7')
+    .to('.hero-visual', {opacity:1, y:0, duration:1.2}, '-=.9');
+
+  // Ambient floating hero nodes
+  gsap.utils.toArray('.float-node').forEach(function(n,i){
+    gsap.to(n, {y:'+=10', x:'+=4', repeat:-1, yoyo:true, duration:2.4+i*0.4, ease:'sine.inOut', delay:i*0.3});
+  });
+
+  /* ---------- SECTION HEADING REVEALS (word split) ---------- */
+  gsap.utils.toArray('h2.split, h3.split, .name.split').forEach(function(h){
+    var words = splitWords(h);
+    if (!words) return;
+    gsap.set(words, {yPercent:105});
+    ScrollTrigger.create({
+      trigger:h, start:'top 82%',
+      onEnter:function(){ gsap.to(words, {yPercent:0, duration:.9, stagger:.045, ease:'power3.out'}); }
+    });
+  });
+  // em inside dark headings
+  gsap.utils.toArray('.approach h2 em, .book h2 em').forEach(function(){});
+
+  /* ---------- GENERIC [data-reveal] ---------- */
+  gsap.utils.toArray('[data-reveal]').forEach(function(el){
+    if (el.closest('.hero')) return; // hero handled by timeline
+    gsap.set(el, {opacity:0, y:26});
+    ScrollTrigger.create({
+      trigger:el, start:'top 88%',
+      onEnter:function(){ gsap.to(el, {opacity:1, y:0, duration:.9, ease:'power3.out', clearProps:'transform'}); }
+    });
+  });
+  // reveal cards/atlas items in nice stagger by walking parents
+  function staggerChildren(sel, childSel){
+    gsap.utils.toArray(sel).forEach(function(parent){
+      var kids = parent.querySelectorAll(childSel);
+      gsap.set(kids, {opacity:0, y:28});
+      ScrollTrigger.create({
+        trigger:parent, start:'top 80%',
+        onEnter:function(){ gsap.to(kids, {opacity:1, y:0, duration:.8, stagger:.06, ease:'power3.out', clearProps:'transform'}); }
+      });
+    });
+  }
+  staggerChildren('#atlasGrid', '.atlas-item');
+  staggerChildren('.steps', '.step');
+
+  /* ---------- COUNT-UP STATS ---------- */
+  gsap.utils.toArray('[data-count]').forEach(function(el){
+    var target = parseFloat(el.dataset.count);
+    var from = parseFloat(el.dataset.from || '0');
+    var suffix = el.dataset.suffix || '';
+    var obj = {v:from};
+    el.textContent = Math.round(from) + suffix;
+    ScrollTrigger.create({
+      trigger:el, start:'top 88%', once:true,
+      onEnter:function(){
+        gsap.to(obj, {v:target, duration:1.8, ease:'power2.out',
+          onUpdate:function(){ el.innerHTML = Math.round(obj.v) + (suffix ? '<span class="suf">'+suffix+'</span>' : ''); }});
+      }
+    });
+  });
+
+  /* ---------- SEAMLESS MARQUEES ---------- */
+  function buildMarquee(container, trackSel, speed, dir){
+    var track = container.querySelector(trackSel);
+    // duplicate content for seamless loop
+    track.innerHTML += track.innerHTML;
+    var half = track.scrollWidth / 2;
+    var xTo = gsap.quickSetter(track, 'x', 'px');
+    var pos = dir < 0 ? -half : 0;
+    var paused = false;
+    container.addEventListener('mouseenter', function(){ paused = true; });
+    container.addEventListener('mouseleave', function(){ paused = false; });
+    var last = null;
+    function tick(t){
+      if (last === null) last = t;
+      var dt = (t - last)/1000; last = t;
+      if (!paused){
+        pos -= speed * dt * (dir < 0 ? -1 : 1);
+        if (dir >= 0 && pos <= -half) pos += half;
+        if (dir < 0 && pos >= 0) pos -= half;
+        xTo(pos);
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  document.querySelectorAll('[data-marquee]').forEach(function(m){
+    buildMarquee(m, '.marquee-track', parseFloat(m.dataset.speed)||40, 1);
+  });
+  document.querySelectorAll('[data-review-row]').forEach(function(r){
+    buildMarquee(r, '.review-track', parseFloat(r.dataset.speed)||55, parseInt(r.dataset.dir,10));
+  });
+
+  /* ---------- WHAT WE HEAL: FILTER ---------- */
+  var pills = document.querySelectorAll('.pill');
+  var items = gsap.utils.toArray('.atlas-item');
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      pills.forEach(function(p){ p.classList.remove('active'); p.setAttribute('aria-selected','false'); });
+      pill.classList.add('active'); pill.setAttribute('aria-selected','true');
+      var f = pill.dataset.filter;
+      items.forEach(function(it){
+        var show = (f === 'all' || it.dataset.cat === f);
+        if (show){
+          it.style.display = '';
+          gsap.fromTo(it, {opacity:0, y:14, scale:.98}, {opacity:1, y:0, scale:1, duration:.5, ease:'power3.out'});
+        } else {
+          gsap.to(it, {opacity:0, y:8, duration:.25, ease:'power2.in', onComplete:function(){ it.style.display='none'; }});
+        }
+      });
+      ScrollTrigger.refresh();
+    });
+  });
+
+  /* ---------- NAV CONDENSE ---------- */
+  var nav = document.getElementById('nav');
+  ScrollTrigger.create({
+    start:'top -80', end:99999,
+    onUpdate:function(self){ nav.classList.toggle('condensed', self.scroll() > 80); }
+  });
+
+  /* ---------- MATCHMEDIA: desktop-only richness ---------- */
+  var mm = gsap.matchMedia();
+
+  // Hero parallax + services pin only on desktop
+  mm.add('(min-width:1025px)', function(){
+    gsap.to('.hero-visual', {yPercent:-8, ease:'none',
+      scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+    return function(){};
+  });
+
+  // Services horizontal pinned scroll (desktop pointer only)
+  mm.add('(min-width:1025px) and (pointer:fine)', function(){
+    var track = document.getElementById('servicesTrack');
+    var section = document.getElementById('services');
+    var getScroll = function(){ return track.scrollWidth - window.innerWidth + parseFloat(getComputedStyle(document.querySelector('.services-head')).paddingLeft || 0); };
+    var st = gsap.to(track, {
+      x:function(){ return -(track.scrollWidth - track.parentElement.offsetWidth); },
+      ease:'none',
+      scrollTrigger:{
+        trigger:section, start:'top top+=60',
+        end:function(){ return '+=' + (track.scrollWidth - track.parentElement.offsetWidth); },
+        pin:true, scrub:.8, invalidateOnRefresh:true, anticipatePin:1
+      }
+    });
+    return function(){ st.scrollTrigger && st.scrollTrigger.kill(); st.kill(); gsap.set(track,{clearProps:'x'}); };
+  });
+
+  // Magnetic buttons + custom cursor (fine pointer)
+  mm.add('(pointer:fine)', function(){
+    // Magnetic
+    var mags = document.querySelectorAll('.magnetic');
+    mags.forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var mx = e.clientX - (r.left + r.width/2);
+        var my = e.clientY - (r.top + r.height/2);
+        gsap.to(btn, {x:mx*.3, y:my*.4, duration:.5, ease:'power3.out'});
+      });
+      btn.addEventListener('mouseleave', function(){ gsap.to(btn, {x:0, y:0, duration:.6, ease:'elastic.out(1,.4)'}); });
+    });
+
+    // Custom cursor
+    var cur = document.querySelector('.cursor');
+    var dot = document.querySelector('.cursor-dot');
+    document.body.classList.add('cursor-on');
+    gsap.set([cur,dot], {opacity:1});
+    var cx = gsap.quickTo(cur,'x',{duration:.5,ease:'power3'});
+    var cy = gsap.quickTo(cur,'y',{duration:.5,ease:'power3'});
+    var dx = gsap.quickTo(dot,'x',{duration:.12,ease:'power3'});
+    var dy = gsap.quickTo(dot,'y',{duration:.12,ease:'power3'});
+    window.addEventListener('mousemove', function(e){ cx(e.clientX); cy(e.clientY); dx(e.clientX); dy(e.clientY); });
+    document.querySelectorAll('a,button,.pill,input').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ cur.classList.add('hover'); });
+      el.addEventListener('mouseleave', function(){ cur.classList.remove('hover'); });
+    });
+    return function(){ document.body.classList.remove('cursor-on'); gsap.set([cur,dot],{opacity:0}); };
+  });
+
+  // Refresh after fonts load to fix any measurement
+  if (document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ ScrollTrigger.refresh(); });
+  }
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

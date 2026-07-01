@@ -1,0 +1,9 @@
+{
+  "pid": 17229,
+  "port": 29551,
+  "token": "871ac551-3068-496f-a84d-ce1b4cb2dfa1",
+  "startedAt": "2026-07-01T03:59:34.920Z",
+  "serverPath": "/Users/alexryu/.claude/skills/gstack/browse/src/server.ts",
+  "mode": "launched",
+  "configHash": "303a7eeccc03078b"
+}
