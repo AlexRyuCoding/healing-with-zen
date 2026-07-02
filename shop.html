@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Apothecary — Shop | Healing with Zen, Pasadena</title>
+<meta name="description" content="Small-batch herbal teas, gua sha tools, foot soaks, and practitioner-grade supplement dispensaries from Healing with Zen — acupuncture & herbal medicine in Pasadena.">
+<meta name="theme-color" content="#1E2A24">
+<meta property="og:title" content="The Apothecary — Healing with Zen">
+<meta property="og:description" content="Take the clinic home with you. Small-batch herbal goods, blended and packed in our Pasadena clinic.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script>
+  // Hide reveal elements before first paint (no FOUC). Removed if animation can't run.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('preanim');
+  }
+</script>
+
+<style>
+/* ============================================================= TOKENS */
+:root{
+  --paper:#EAE4D5;
+  --paper-2:#E1D9C6;
+  --ink:#1E2A24;
+  --ink-soft:#2C3A32;
+  --jade:#3E6B55;
+  --jade-2:#557E63;
+  --sage:#9BAE97;
+  --mist:#CBD6C7;
+  --moxa:#C8823C;
+  --moxa-deep:#A5641F;
+  --clay:#B0563E;
+  --line:rgba(30,42,36,.14);
+  --line-light:rgba(234,228,213,.16);
+
+  --font-display:"Fraunces", Georgia, serif;
+  --font-body:"Instrument Sans", system-ui, sans-serif;
+  --font-mono:"Space Mono", ui-monospace, monospace;
+
+  --gutter:clamp(1.25rem, 5vw, 6rem);
+  --maxw:1200px;
+  --pad-y:clamp(5rem, 12vh, 10rem);
+
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+
+/* ============================================================= RESET */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+ul{list-style:none}
+::selection{background:var(--moxa);color:var(--ink)}
+
+a:focus-visible,button:focus-visible,input:focus-visible,
+[tabindex]:focus-visible{
+  outline:2px solid var(--jade);
+  outline-offset:3px;
+  border-radius:2px;
+}
+:focus:not(:focus-visible){outline:none}
+
+.skip-link{
+  position:fixed;left:1rem;top:-100px;z-index:1000;
+  background:var(--ink);color:var(--paper);
+  padding:.75rem 1.25rem;border-radius:3px;font-family:var(--font-mono);
+  font-size:.8rem;transition:top .2s;
+}
+.skip-link:focus{top:1rem}
+
+/* ============================================================= LAYOUT */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);width:100%}
+section{position:relative}
+.section-pad{padding-block:var(--pad-y)}
+main{position:relative;z-index:3}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:var(--jade);
+  margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.6em;
+}
+.eyebrow .pt{color:var(--moxa-deep);font-weight:700}
+.dark .eyebrow{color:var(--sage)}
+.dark .eyebrow .pt{color:var(--moxa)}
+.eyebrow::before{content:"";width:1.75rem;height:1px;background:currentColor;opacity:.5}
+
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.02;letter-spacing:-.015em;text-wrap:balance}
+.lede{max-width:62ch;color:color-mix(in srgb,var(--ink) 82%,transparent);font-size:clamp(1.0625rem,1.4vw,1.25rem)}
+.dark .lede{color:color-mix(in srgb,var(--paper) 78%,transparent)}
+.mono{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* ============================================================= BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;
+  padding:.95em 1.6em;border-radius:3px;
+  transition:transform .5s var(--ease-out),background .3s,color .3s,box-shadow .3s,filter .15s;
+  will-change:transform;position:relative;
+}
+.btn svg{width:1em;height:1em}
+.btn-primary{background:var(--moxa);color:var(--ink);box-shadow:0 1px 0 rgba(30,42,36,.2)}
+.btn-primary:hover{background:var(--moxa-deep);color:var(--paper);box-shadow:0 12px 30px -10px rgba(165,100,31,.6)}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px var(--line)}
+.dark .btn-ghost{box-shadow:inset 0 0 0 1px var(--line-light)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--jade);color:var(--jade)}
+.dark .btn-ghost:hover{color:var(--paper);box-shadow:inset 0 0 0 1px var(--sage)}
+.btn:active{filter:brightness(.92)}
+
+/* ============================================================= FIXED LAYERS */
+.grain{
+  position:fixed;inset:0;z-index:2;pointer-events:none;
+  opacity:.4;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+.cursor,.cursor-dot{
+  position:fixed;top:0;left:0;z-index:900;pointer-events:none;
+  border-radius:50%;mix-blend-mode:difference;opacity:0;
+}
+.cursor{width:34px;height:34px;border:1px solid #fff;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .3s,background .25s}
+.cursor-dot{width:5px;height:5px;background:#fff;transform:translate(-50%,-50%);transition:opacity .3s}
+.cursor.hover{width:56px;height:56px;background:rgba(255,255,255,.08)}
+body.cursor-on{cursor:none}
+body.cursor-on a,body.cursor-on button{cursor:none}
+
+/* ============================================================= NAV */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem var(--gutter);
+  transition:padding .4s var(--ease-out),background .4s,box-shadow .4s,backdrop-filter .4s;
+}
+.site-nav.condensed{
+  padding:.75rem var(--gutter);
+  background:color-mix(in srgb,var(--paper) 82%,transparent);
+  backdrop-filter:blur(12px) saturate(1.2);
+  box-shadow:0 1px 0 var(--line);
+}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--font-display);font-size:1.15rem;letter-spacing:-.01em;z-index:210}
+.brand .mark{width:30px;height:30px;flex:none}
+.brand .mark circle{fill:none;stroke:var(--jade);stroke-width:1.5}
+.brand .mark line{stroke:var(--moxa-deep);stroke-width:1.5;stroke-linecap:round}
+.brand .mark .dot{fill:var(--moxa-deep);stroke:none}
+
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.95rem;position:relative;padding:.25rem 0;color:color-mix(in srgb,var(--ink) 78%,transparent)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--jade);transition:width .3s var(--ease-out)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-links a[aria-current="page"]{color:var(--ink)}
+.nav-links a[aria-current="page"]::after{width:100%;background:var(--moxa)}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+
+.nav-toggle{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;z-index:210}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);transition:transform .4s var(--ease-out),opacity .3s}
+.nav-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-open .nav-toggle span:nth-child(2){opacity:0}
+.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav-overlay{
+  position:fixed;inset:0;z-index:205;background:var(--ink);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;gap:.25rem;
+  padding:var(--gutter);
+  clip-path:inset(0 0 100% 0);
+  visibility:hidden;
+}
+.nav-open .nav-overlay{visibility:visible}
+.nav-overlay a.ov-link{font-family:var(--font-display);font-size:clamp(2.25rem,9vw,3.5rem);line-height:1.15;color:var(--paper);overflow:hidden;display:block}
+.nav-overlay a.ov-link .ovi{display:inline-block}
+.nav-overlay .ov-meta{margin-top:2.5rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.12em;color:var(--sage);display:flex;flex-direction:column;gap:.75rem}
+.nav-overlay .ov-meta a{color:var(--paper)}
+.nav-overlay .btn{align-self:flex-start;margin-top:2rem}
+
+/* ============================================================= SHOP HEADER */
+.shop-hero{padding-top:clamp(9rem,18vh,12rem);padding-bottom:clamp(2.5rem,5vw,4rem)}
+.shop-hero .crumb{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--ink) 55%,transparent);margin-bottom:2.25rem;
+  display:flex;align-items:center;gap:.6em;
+}
+.shop-hero .crumb a{color:var(--jade);border-bottom:1px solid var(--line);padding-bottom:1px}
+.shop-hero .crumb a:hover{border-color:var(--jade)}
+.shop-hero h1{
+  font-size:clamp(2.75rem,6.5vw,5.5rem);font-weight:300;line-height:.98;letter-spacing:-.02em;
+  margin-bottom:1.5rem;max-width:14ch;
+}
+.shop-hero h1 .line{display:block;overflow:hidden;padding-bottom:.05em}
+.shop-hero h1 .line-inner{display:block}
+.shop-hero h1 em{font-style:italic;font-weight:400;color:var(--jade)}
+.shop-hero .lede{margin-bottom:0}
+.shop-hero .hero-note{
+  margin-top:1.75rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;
+  color:var(--jade);text-transform:uppercase;
+}
+.shop-hero .hero-note b{color:var(--moxa-deep);font-weight:400}
+.preanim [data-reveal]{opacity:0}
+.preanim .line-inner{transform:translateY(110%)}
+
+/* ============================================================= SHOP GRID */
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.product-card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:4px;
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,42,36,.35);border-color:var(--moxa)}
+.product-photo{aspect-ratio:1/1;position:relative;overflow:hidden;background:var(--mist)}
+.product-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease-out)}
+.product-card:hover .product-photo img{transform:scale(1.05)}
+.price-tag{
+  position:absolute;left:0;bottom:1rem;z-index:2;
+  background:var(--paper);border:1px solid var(--line);border-left:2px solid var(--moxa);
+  padding:.4rem .8rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;
+}
+.price-tag s{color:color-mix(in srgb,var(--ink) 45%,transparent);margin-left:.5em;font-size:.85em}
+.product-meta{padding:1.3rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.product-meta .ptype{font-size:.66rem;color:var(--jade)}
+.product-meta h2{font-size:1.35rem;font-weight:500;line-height:1.15}
+.product-meta p{font-size:.92rem;line-height:1.5;color:color-mix(in srgb,var(--ink) 68%,transparent)}
+.product-meta .shoplink{
+  margin-top:auto;padding-top:.75rem;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--moxa-deep);display:inline-flex;align-items:center;gap:.4em;
+}
+.product-meta .shoplink .arr{transition:transform .3s var(--ease-out);display:inline-block}
+.product-card:hover .shoplink .arr{transform:translateX(4px)}
+
+/* ============================================================= DISPENSARIES */
+.dispensaries{margin-top:clamp(3.5rem,7vw,5.5rem)}
+.disp-label{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--ink) 60%,transparent);margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.disp-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.disp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.disp-card{
+  background:var(--paper);padding:1.5rem 1.4rem 1.6rem;
+  display:flex;flex-direction:column;gap:.5rem;transition:background .35s;
+}
+.disp-card:hover{background:var(--paper-2)}
+.disp-card .mono{color:var(--jade);font-size:.66rem}
+.disp-card h2{font-size:1.25rem;font-weight:500}
+.disp-card p{font-size:.88rem;line-height:1.5;color:color-mix(in srgb,var(--ink) 66%,transparent)}
+.disp-card .shoplink{
+  margin-top:auto;padding-top:.9rem;
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--moxa-deep);
+  display:inline-flex;align-items:center;gap:.4em;
+}
+.disp-card .shoplink .arr{transition:transform .3s var(--ease-out)}
+.disp-card:hover .shoplink .arr{transform:translateX(4px)}
+
+/* ============================================================= GUIDANCE CTA (dark) */
+.dark{background:var(--ink);color:var(--paper)}
+.guide h2{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:300;letter-spacing:-.02em;max-width:18ch}
+.guide h2 em{font-style:italic;color:var(--moxa)}
+.guide .lede{margin:1.5rem 0 2.25rem}
+.guide-cta{display:flex;flex-wrap:wrap;gap:1rem}
+.guide-call{color:var(--paper);box-shadow:inset 0 0 0 1px var(--line-light)}
+
+/* ============================================================= FOOTER */
+.site-footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-light);padding-block:clamp(2.5rem,5vw,4rem)}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start}
+.footer-grid .addr{font-size:.95rem;line-height:1.6;color:color-mix(in srgb,var(--paper) 75%,transparent)}
+.footer-grid .addr a:hover{color:var(--moxa)}
+.footer-grid .addr .mono{color:var(--sage);display:block;margin-bottom:.5rem}
+.socials{display:flex;gap:1.25rem;flex-wrap:wrap}
+.socials a{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--paper) 72%,transparent)}
+.socials a:hover{color:var(--moxa)}
+.footer-bottom{border-top:1px solid var(--line-light);margin-top:2.5rem;padding-top:1.75rem;
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.legal{display:flex;gap:1.5rem;flex-wrap:wrap;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:color-mix(in srgb,var(--paper) 50%,transparent)}
+.legal a:hover{color:var(--paper)}
+.copyright{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:color-mix(in srgb,var(--paper) 45%,transparent)}
+
+/* ============================================================= RESPONSIVE */
+@media (max-width:1024px){
+  .nav-links,.nav-right .btn{display:none}
+  .nav-toggle{display:flex}
+  .shop-grid{grid-template-columns:repeat(2,1fr)}
+  .disp-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .shop-grid{grid-template-columns:1fr}
+  .disp-grid{grid-template-columns:1fr}
+  .guide-cta{flex-direction:column;align-items:stretch}
+  .guide-cta .btn{justify-content:center}
+  .nav-overlay a.ov-link{font-size:clamp(2rem,11vw,2.75rem)}
+}
+
+/* ============================================================= REDUCED MOTION */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .cursor,.cursor-dot{display:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#products">Skip to products</a>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="site-nav" id="nav">
+  <a class="brand" href="index.html" aria-label="Healing with Zen — home">
+    <svg class="mark" viewBox="0 0 30 30" aria-hidden="true">
+      <circle cx="15" cy="15" r="11"/>
+      <line x1="15" y1="4" x2="15" y2="26"/>
+      <circle class="dot" cx="15" cy="15" r="2.2"/>
+    </svg>
+    <span>Healing&nbsp;with&nbsp;Zen</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html#heal">Heal</a>
+    <a href="index.html#how">How</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="shop.html" aria-current="page">Shop</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <a class="btn btn-primary magnetic" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navOverlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <a class="ov-link" href="index.html#heal"><span class="ovi">Heal</span></a>
+  <a class="ov-link" href="index.html#services"><span class="ovi">Services</span></a>
+  <a class="ov-link" href="index.html#team"><span class="ovi">Team</span></a>
+  <a class="ov-link" href="index.html#reviews"><span class="ovi">Reviews</span></a>
+  <a class="ov-link" href="shop.html"><span class="ovi">Shop</span></a>
+  <a class="ov-link" href="index.html#contact"><span class="ovi">Contact</span></a>
+  <div class="ov-meta">
+    <a href="tel:6263779596">(626) 377-9596</a>
+    <span>221 E. Walnut St, Ste 134 · Pasadena</span>
+  </div>
+  <a class="btn btn-primary" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+</div>
+
+<main>
+
+<!-- ===================== SHOP HERO ===================== -->
+<section class="shop-hero wrap" aria-labelledby="shop-h1">
+  <p class="crumb" data-reveal><a href="index.html">Home</a> <span aria-hidden="true">/</span> Shop</p>
+  <p class="eyebrow"><span class="pt">ST-25</span> · The apothecary</p>
+  <h1 id="shop-h1">
+    <span class="line"><span class="line-inner">Take the clinic</span></span>
+    <span class="line"><span class="line-inner"><em>home</em> with you.</span></span>
+  </h1>
+  <p class="lede" data-reveal>Small-batch herbal goods, blended and packed in our Pasadena clinic — plus the practitioner-grade dispensaries we trust. Everything here is something we use, prescribe, or made ourselves.</p>
+  <p class="hero-note" data-reveal>✧&nbsp; Ships from Pasadena · Blended in-house by <b>licensed herbalists</b> &nbsp;✧</p>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="wrap" id="products" aria-label="Clinic-made products" style="padding-bottom:var(--pad-y)">
+  <div class="shop-grid" id="shopGrid">
+    <a class="product-card" href="https://healingwithzen.square.site/product/chrysanthemum-tea/24" target="_blank" rel="noopener">
+      <div class="product-photo">
+        <img src="assets/img/shop-chrysanthemum.jpg" alt="Healing with Zen's Chrysanthemum and Goji Berry Tea in a kraft pouch, held up in the clinic garden" loading="lazy" width="1000" height="1000">
+        <span class="price-tag">$12.00</span>
+      </div>
+      <div class="product-meta">
+        <span class="ptype mono">Tea blend</span>
+        <h2>Chrysanthemum &amp; Goji Berry Tea</h2>
+        <p>A cooling blend for tired eyes, screen days, and busy heads.</p>
+        <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="product-card" href="https://healingwithzen.square.site/product/vitalitytea/26" target="_blank" rel="noopener">
+      <div class="product-photo">
+        <img src="assets/img/shop-vitality.jpg" alt="Healing with Zen's Vitality Tea pouch beside the clinic's branded lamp" loading="lazy" width="1000" height="1000">
+        <span class="price-tag">$15.00</span>
+      </div>
+      <div class="product-meta">
+        <span class="ptype mono">Tea blend</span>
+        <h2>Vitality Tea</h2>
+        <p>Our daily blend for steady energy — no crash, no jitters.</p>
+        <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="product-card" href="https://healingwithzen.square.site/product/rose-quartz-facial-gua-sha-tool/20" target="_blank" rel="noopener">
+      <div class="product-photo">
+        <img src="assets/img/shop-guasha.jpg" alt="Rose quartz facial gua sha tool in a Healing with Zen branded gift box" loading="lazy" width="1000" height="1000">
+        <span class="price-tag">$20.00 <s>$29.99</s></span>
+      </div>
+      <div class="product-meta">
+        <span class="ptype mono">Tools</span>
+        <h2>Rose Quartz Gua Sha Tool</h2>
+        <p>The same stone we use in facials, in a gift-ready box.</p>
+        <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="product-card" href="https://healingwithzen.square.site/product/herbal-foot-soak/27" target="_blank" rel="noopener">
+      <div class="product-photo">
+        <img src="assets/img/shop-footsoak.jpg" alt="Healing with Zen's Herbal Foot Soak sachets in a kraft pouch" loading="lazy" width="1000" height="1000">
+        <span class="price-tag">$10.00</span>
+      </div>
+      <div class="product-meta">
+        <span class="ptype mono">Bath &amp; body</span>
+        <h2>Herbal Foot Soak</h2>
+        <p>An end-of-day ritual for tired feet and deeper sleep.</p>
+        <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="product-card" href="https://healingwithzen.square.site/product/herbal-pain-patch/25" target="_blank" rel="noopener">
+      <div class="product-photo">
+        <img src="assets/img/shop-painpatch.jpg" alt="Herbal pain relief patches held among bamboo leaves" loading="lazy" width="1000" height="1000">
+        <span class="price-tag">$3.00</span>
+      </div>
+      <div class="product-meta">
+        <span class="ptype mono">Topical</span>
+        <h2>Herbal Pain Patch</h2>
+        <p>Stick-on herbal relief for sore spots, between visits.</p>
+        <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a class="product-card" href="https://healingwithzen.square.site/product/facial-gua-sha-class-pre-recorded-/28" target="_blank" rel="noopener">
+      <div class="product-photo">
+        <img src="assets/img/shop-masterclass.png" alt="Facial Gua Sha 101 class cover with an illustrated hand holding a rose quartz tool" loading="lazy" width="1000" height="1000">
+        <span class="price-tag">$20.00</span>
+      </div>
+      <div class="product-meta">
+        <span class="ptype mono">Masterclass</span>
+        <h2>Facial Gua Sha Class</h2>
+        <p>Learn our lifting, de-puffing routine — pre-recorded, at your pace.</p>
+        <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+  </div>
+
+  <div class="dispensaries" data-reveal>
+    <p class="disp-label">Practitioner-grade dispensaries</p>
+    <div class="disp-grid">
+      <a class="disp-card" href="https://healingwithzen.standardprocess.com/products" target="_blank" rel="noopener">
+        <span class="mono">Premier practitioner</span>
+        <h2>Standard Process</h2>
+        <p>Whole-food supplements — shop the protocols we prescribe in clinic.</p>
+        <span class="shoplink">Visit dispensary <span class="arr" aria-hidden="true">→</span></span>
+      </a>
+      <a class="disp-card" href="https://us.fullscript.com/welcome/healingwithzen" target="_blank" rel="noopener">
+        <span class="mono">Online dispensary</span>
+        <h2>Fullscript</h2>
+        <p>Professional-grade supplements, shipped straight to your door.</p>
+        <span class="shoplink">Visit dispensary <span class="arr" aria-hidden="true">→</span></span>
+      </a>
+      <a class="disp-card" href="https://prolonlife.com/HealingWithZen" target="_blank" rel="noopener">
+        <span class="mono">Fasting nutrition</span>
+        <h2>ProLon</h2>
+        <p>Five-day fasting-mimicking programs for a gentle metabolic reset.</p>
+        <span class="shoplink">Explore programs <span class="arr" aria-hidden="true">→</span></span>
+      </a>
+      <a class="disp-card" href="https://mydailychoice.com/shop/ear-seeds-ear-acupressure-essentials-set?ref=healingwithzen" target="_blank" rel="noopener">
+        <span class="mono">Acupressure at home</span>
+        <h2>EarSeeds</h2>
+        <p>24k gold and crystal ear seed kits that extend your treatment.</p>
+        <span class="shoplink">Shop kits <span class="arr" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUIDANCE CTA (dark) ===================== -->
+<section class="dark guide section-pad" aria-labelledby="guide-h">
+  <div class="wrap">
+    <p class="eyebrow"><span class="pt">LU-9</span> · Not sure where to start?</p>
+    <h2 id="guide-h" data-reveal>Tell us what's going on — we'll match the <em>right</em> formula to you.</h2>
+    <p class="lede" data-reveal>Supplements work best when they fit your constitution. Book a visit or a telemedicine consult and we'll build a plan around you — not a bestseller list.</p>
+    <div class="guide-cta" data-reveal>
+      <a class="btn btn-primary magnetic" href="https://healingwithzen.janeapp.com/" target="_blank" rel="noopener">Book a Session</a>
+      <a class="btn guide-call" href="tel:6263779596">Call (626) 377-9596</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <p class="addr">
+        <span class="mono">Visit us</span>
+        <a href="https://www.google.com/maps/place/Healing+with+Zen" target="_blank" rel="noopener">221 E. Walnut St, Ste 134<br>Pasadena, CA 91101</a>
+      </p>
+      <p class="addr">
+        <span class="mono">Contact</span>
+        <a href="tel:6263779596">(626) 377-9596</a><br>
+        <a href="mailto:info@healingwithzen.com">info@healingwithzen.com</a>
+      </p>
+      <div class="socials">
+        <a href="https://www.instagram.com/healingwithzen/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/healingwithzen" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/channel/UC7W3C3Rfu8Wk9tsqA-pGwFw" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.yelp.com/biz/healing-with-zen-pasadena" target="_blank" rel="noopener">Yelp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="legal">
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <p class="copyright">© 2026 Healing with Zen — Acupuncture &amp; Herbal Remedies</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CDN LIBRARIES ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script>
+(function(){
+  "use strict";
+  var docEl = document.documentElement;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = !!(window.gsap && window.ScrollTrigger);
+
+  if (reduce || !hasGSAP) {
+    docEl.classList.remove('preanim');
+  }
+
+  /* ---------- MOBILE NAV ---------- */
+  var toggle = document.querySelector('.nav-toggle');
+  var overlay = document.getElementById('navOverlay');
+  var overlayLinks = overlay ? overlay.querySelectorAll('.ovi') : [];
+  function setMenu(open){
+    document.body.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    if (open && hasGSAP && !reduce){
+      gsap.set(overlay, {clipPath:'inset(0 0 0% 0)'});
+      gsap.fromTo(overlayLinks, {yPercent:110}, {yPercent:0, duration:.6, stagger:.06, ease:'power3.out', delay:.05});
+    } else if (!open && hasGSAP && !reduce){
+      gsap.set(overlay, {clipPath:'inset(0 0 100% 0)'});
+    }
+  }
+  if (toggle){
+    toggle.addEventListener('click', function(){ setMenu(!document.body.classList.contains('nav-open')); });
+    overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && document.body.classList.contains('nav-open')) setMenu(false); });
+  }
+
+  if (!hasGSAP) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (reduce) return;
+
+  /* ---------- LENIS SMOOTH SCROLL ---------- */
+  var lenis = new Lenis({ duration:1.1, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(time){ lenis.raf(time*1000); });
+  gsap.ticker.lagSmoothing(0);
+
+  /* ---------- HERO LOAD TIMELINE ---------- */
+  docEl.classList.remove('preanim');
+  gsap.set('.shop-hero .eyebrow', {opacity:0, y:16});
+  gsap.set('.shop-hero h1 .line-inner', {yPercent:110});
+  gsap.set('.shop-hero [data-reveal]', {opacity:0, y:20});
+
+  var tl = gsap.timeline({ delay:.15, defaults:{ease:'expo.out'} });
+  tl.to('.shop-hero .eyebrow', {opacity:1, y:0, duration:.9}, .1)
+    .to('.shop-hero h1 .line-inner', {yPercent:0, duration:1.15, stagger:.08}, .2)
+    .to('.shop-hero [data-reveal]', {opacity:1, y:0, duration:.9, stagger:.1}, '-=.7');
+
+  /* ---------- SCROLL REVEALS ---------- */
+  gsap.utils.toArray('[data-reveal]').forEach(function(el){
+    if (el.closest('.shop-hero')) return;
+    gsap.set(el, {opacity:0, y:26});
+    ScrollTrigger.create({
+      trigger:el, start:'top 88%',
+      onEnter:function(){ gsap.to(el, {opacity:1, y:0, duration:.9, ease:'power3.out', clearProps:'transform'}); }
+    });
+  });
+  function staggerChildren(sel, childSel){
+    gsap.utils.toArray(sel).forEach(function(parent){
+      var kids = parent.querySelectorAll(childSel);
+      gsap.set(kids, {opacity:0, y:28});
+      ScrollTrigger.create({
+        trigger:parent, start:'top 85%',
+        onEnter:function(){ gsap.to(kids, {opacity:1, y:0, duration:.8, stagger:.06, ease:'power3.out', clearProps:'transform'}); }
+      });
+    });
+  }
+  staggerChildren('#shopGrid', '.product-card');
+  staggerChildren('.disp-grid', '.disp-card');
+
+  /* ---------- NAV CONDENSE ---------- */
+  var nav = document.getElementById('nav');
+  ScrollTrigger.create({
+    start:'top -80', end:99999,
+    onUpdate:function(self){ nav.classList.toggle('condensed', self.scroll() > 80); }
+  });
+
+  /* ---------- MAGNETIC + CURSOR (fine pointer) ---------- */
+  var mm = gsap.matchMedia();
+  mm.add('(pointer:fine)', function(){
+    var mags = document.querySelectorAll('.magnetic');
+    mags.forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var mx = e.clientX - (r.left + r.width/2);
+        var my = e.clientY - (r.top + r.height/2);
+        gsap.to(btn, {x:mx*.3, y:my*.4, duration:.5, ease:'power3.out'});
+      });
+      btn.addEventListener('mouseleave', function(){ gsap.to(btn, {x:0, y:0, duration:.6, ease:'elastic.out(1,.4)'}); });
+    });
+
+    var cur = document.querySelector('.cursor');
+    var dot = document.querySelector('.cursor-dot');
+    document.body.classList.add('cursor-on');
+    gsap.set([cur,dot], {opacity:1});
+    var cx = gsap.quickTo(cur,'x',{duration:.5,ease:'power3'});
+    var cy = gsap.quickTo(cur,'y',{duration:.5,ease:'power3'});
+    var dx = gsap.quickTo(dot,'x',{duration:.12,ease:'power3'});
+    var dy = gsap.quickTo(dot,'y',{duration:.12,ease:'power3'});
+    window.addEventListener('mousemove', function(e){ cx(e.clientX); cy(e.clientY); dx(e.clientX); dy(e.clientY); });
+    document.querySelectorAll('a,button').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ cur.classList.add('hover'); });
+      el.addEventListener('mouseleave', function(){ cur.classList.remove('hover'); });
+    });
+    return function(){ document.body.classList.remove('cursor-on'); gsap.set([cur,dot],{opacity:0}); };
+  });
+
+  if (document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ ScrollTrigger.refresh(); });
+  }
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
