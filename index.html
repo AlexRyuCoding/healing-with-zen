@@ -405,6 +405,61 @@ body.cursor-on a,body.cursor-on button{cursor:none}
 .review-agg a{color:var(--jade);border-bottom:1px solid var(--line)}
 .review-agg a:hover{border-color:var(--jade)}
 
+/* ============================================================= SHOP (Apothecary) */
+.shop-head{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.shop-head .lede{font-size:1.05rem;padding-bottom:.4rem}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.product-card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:4px;
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,42,36,.35);border-color:var(--moxa)}
+.product-photo{aspect-ratio:1/1;position:relative;overflow:hidden;background:var(--mist)}
+.product-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease-out)}
+.product-card:hover .product-photo img{transform:scale(1.05)}
+.price-tag{
+  position:absolute;left:0;bottom:1rem;z-index:2;
+  background:var(--paper);border:1px solid var(--line);border-left:2px solid var(--moxa);
+  padding:.4rem .8rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;
+}
+.price-tag s{color:color-mix(in srgb,var(--ink) 45%,transparent);margin-left:.5em;font-size:.85em}
+.product-meta{padding:1.3rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.product-meta .ptype{font-size:.66rem;color:var(--jade)}
+.product-meta h3{font-family:var(--font-display);font-size:1.35rem;font-weight:500;line-height:1.15}
+.product-meta p{font-size:.92rem;line-height:1.5;color:color-mix(in srgb,var(--ink) 68%,transparent)}
+.product-meta .shoplink{
+  margin-top:auto;padding-top:.75rem;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--moxa-deep);display:inline-flex;align-items:center;gap:.4em;
+}
+.product-meta .shoplink .arr{transition:transform .3s var(--ease-out);display:inline-block}
+.product-card:hover .shoplink .arr{transform:translateX(4px)}
+/* Dispensaries */
+.dispensaries{margin-top:clamp(3rem,6vw,4.5rem)}
+.disp-label{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:color-mix(in srgb,var(--ink) 60%,transparent);margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.disp-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.disp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.disp-card{
+  background:var(--paper);padding:1.5rem 1.4rem 1.6rem;
+  display:flex;flex-direction:column;gap:.5rem;transition:background .35s;
+}
+.disp-card:hover{background:var(--paper-2)}
+.disp-card .mono{color:var(--jade);font-size:.66rem}
+.disp-card h3{font-family:var(--font-display);font-size:1.25rem;font-weight:500}
+.disp-card p{font-size:.88rem;line-height:1.5;color:color-mix(in srgb,var(--ink) 66%,transparent)}
+.disp-card .shoplink{
+  margin-top:auto;padding-top:.9rem;
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--moxa-deep);
+  display:inline-flex;align-items:center;gap:.4em;
+}
+.disp-card .shoplink .arr{transition:transform .3s var(--ease-out)}
+.disp-card:hover .shoplink .arr{transform:translateX(4px)}
+
 /* ============================================================= BOOK */
 .book{background:var(--ink);color:var(--paper);text-align:center}
 .book h2{font-size:clamp(2.25rem,6vw,5rem);font-weight:300;line-height:1;letter-spacing:-.02em;max-width:16ch;margin-inline:auto}
@@ -463,6 +518,9 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   .hero-visual{max-width:440px;order:-1;aspect-ratio:16/11}
   .hero-visual img{object-position:center 72%}
   .atlas-grid{grid-template-columns:repeat(2,1fr)}
+  .shop-head{grid-template-columns:1fr;gap:1rem;align-items:start}
+  .shop-grid{grid-template-columns:repeat(2,1fr)}
+  .disp-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
   /* Six links + wordmark + button need desktop width — use the overlay menu below 1025px */
   .nav-links,.nav-right .btn{display:none}
@@ -481,6 +539,8 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   :root{--rail:26px}
   .qi-node{width:7px;height:7px}
   .atlas-grid{grid-template-columns:1fr}
+  .shop-grid{grid-template-columns:1fr}
+  .disp-grid{grid-template-columns:1fr}
   .review-card{flex-basis:80vw}
   .nav-overlay a.ov-link{font-size:clamp(2rem,11vw,2.75rem)}
 }
@@ -514,14 +574,15 @@ body.cursor-on a,body.cursor-on button{cursor:none}
     <path class="qi-path" id="qiPath" d="M50 0 Q82 55 50 111 Q18 166 50 222 Q82 277 50 333 Q18 388 50 444 Q82 500 50 555 Q18 611 50 666 Q82 722 50 777 Q18 833 50 888 Q82 944 50 1000"/>
   </svg>
   <div class="qi-node" data-node="0" style="top:0%"></div>
-  <div class="qi-node" data-node="1" style="top:11.1%"></div>
-  <div class="qi-node" data-node="2" style="top:22.2%"></div>
-  <div class="qi-node" data-node="3" style="top:33.3%"></div>
-  <div class="qi-node" data-node="4" style="top:44.4%"></div>
-  <div class="qi-node" data-node="5" style="top:55.5%"></div>
-  <div class="qi-node" data-node="6" style="top:66.6%"></div>
-  <div class="qi-node" data-node="7" style="top:77.7%"></div>
-  <div class="qi-node" data-node="8" style="top:88.8%"></div>
+  <div class="qi-node" data-node="1" style="top:10%"></div>
+  <div class="qi-node" data-node="2" style="top:20%"></div>
+  <div class="qi-node" data-node="3" style="top:30%"></div>
+  <div class="qi-node" data-node="4" style="top:40%"></div>
+  <div class="qi-node" data-node="5" style="top:50%"></div>
+  <div class="qi-node" data-node="6" style="top:60%"></div>
+  <div class="qi-node" data-node="7" style="top:70%"></div>
+  <div class="qi-node" data-node="8" style="top:80%"></div>
+  <div class="qi-node" data-node="9" style="top:90%"></div>
 </div>
 
 <div class="cursor" aria-hidden="true"></div>
@@ -544,6 +605,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
     <a href="#services">Services</a>
     <a href="#team">Team</a>
     <a href="#reviews">Reviews</a>
+    <a href="#shop">Shop</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -562,6 +624,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   <a class="ov-link" href="#services"><span class="ovi">Services</span></a>
   <a class="ov-link" href="#team"><span class="ovi">Team</span></a>
   <a class="ov-link" href="#reviews"><span class="ovi">Reviews</span></a>
+  <a class="ov-link" href="#shop"><span class="ovi">Shop</span></a>
   <a class="ov-link" href="#contact"><span class="ovi">Contact</span></a>
   <div class="ov-meta">
     <a href="tel:6263779596">(626) 377-9596</a>
@@ -882,6 +945,124 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   </div>
 </section>
 
+<!-- ===================== SHOP (Apothecary) ===================== -->
+<section class="shop section-pad" id="shop" aria-labelledby="shop-h">
+  <div class="wrap">
+    <div class="shop-head">
+      <div>
+        <p class="eyebrow"><span class="pt">ST-25</span> · The apothecary</p>
+        <h2 class="h2 split" id="shop-h">Take the clinic home with you.</h2>
+      </div>
+      <p class="lede" data-reveal>Small-batch herbal goods, blended and packed in our Pasadena clinic — plus the practitioner-grade dispensaries we trust.</p>
+    </div>
+
+    <div class="shop-grid" id="shopGrid">
+      <a class="product-card" href="https://healingwithzen.square.site/product/chrysanthemum-tea/24" target="_blank" rel="noopener">
+        <div class="product-photo">
+          <img src="assets/img/shop-chrysanthemum.jpg" alt="Healing with Zen's Chrysanthemum and Goji Berry Tea in a kraft pouch, held up in the clinic garden" loading="lazy" width="1000" height="1000">
+          <span class="price-tag">$12.00</span>
+        </div>
+        <div class="product-meta">
+          <span class="ptype mono">Tea blend</span>
+          <h3>Chrysanthemum &amp; Goji Berry Tea</h3>
+          <p>A cooling blend for tired eyes, screen days, and busy heads.</p>
+          <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="product-card" href="https://healingwithzen.square.site/product/vitalitytea/26" target="_blank" rel="noopener">
+        <div class="product-photo">
+          <img src="assets/img/shop-vitality.jpg" alt="Healing with Zen's Vitality Tea pouch beside the clinic's branded lamp" loading="lazy" width="1000" height="1000">
+          <span class="price-tag">$15.00</span>
+        </div>
+        <div class="product-meta">
+          <span class="ptype mono">Tea blend</span>
+          <h3>Vitality Tea</h3>
+          <p>Our daily blend for steady energy — no crash, no jitters.</p>
+          <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="product-card" href="https://healingwithzen.square.site/product/rose-quartz-facial-gua-sha-tool/20" target="_blank" rel="noopener">
+        <div class="product-photo">
+          <img src="assets/img/shop-guasha.jpg" alt="Rose quartz facial gua sha tool in a Healing with Zen branded gift box" loading="lazy" width="1000" height="1000">
+          <span class="price-tag">$20.00 <s>$29.99</s></span>
+        </div>
+        <div class="product-meta">
+          <span class="ptype mono">Tools</span>
+          <h3>Rose Quartz Gua Sha Tool</h3>
+          <p>The same stone we use in facials, in a gift-ready box.</p>
+          <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="product-card" href="https://healingwithzen.square.site/product/herbal-foot-soak/27" target="_blank" rel="noopener">
+        <div class="product-photo">
+          <img src="assets/img/shop-footsoak.jpg" alt="Healing with Zen's Herbal Foot Soak sachets in a kraft pouch" loading="lazy" width="1000" height="1000">
+          <span class="price-tag">$10.00</span>
+        </div>
+        <div class="product-meta">
+          <span class="ptype mono">Bath &amp; body</span>
+          <h3>Herbal Foot Soak</h3>
+          <p>An end-of-day ritual for tired feet and deeper sleep.</p>
+          <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="product-card" href="https://healingwithzen.square.site/product/herbal-pain-patch/25" target="_blank" rel="noopener">
+        <div class="product-photo">
+          <img src="assets/img/shop-painpatch.jpg" alt="Herbal pain relief patches held among bamboo leaves" loading="lazy" width="1000" height="1000">
+          <span class="price-tag">$3.00</span>
+        </div>
+        <div class="product-meta">
+          <span class="ptype mono">Topical</span>
+          <h3>Herbal Pain Patch</h3>
+          <p>Stick-on herbal relief for sore spots, between visits.</p>
+          <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="product-card" href="https://healingwithzen.square.site/product/facial-gua-sha-class-pre-recorded-/28" target="_blank" rel="noopener">
+        <div class="product-photo">
+          <img src="assets/img/shop-masterclass.png" alt="Facial Gua Sha 101 class cover with an illustrated hand holding a rose quartz tool" loading="lazy" width="1000" height="1000">
+          <span class="price-tag">$20.00</span>
+        </div>
+        <div class="product-meta">
+          <span class="ptype mono">Masterclass</span>
+          <h3>Facial Gua Sha Class</h3>
+          <p>Learn our lifting, de-puffing routine — pre-recorded, at your pace.</p>
+          <span class="shoplink">Shop <span class="arr" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    </div>
+
+    <div class="dispensaries" data-reveal>
+      <p class="disp-label">Practitioner-grade dispensaries</p>
+      <div class="disp-grid">
+        <a class="disp-card" href="https://healingwithzen.standardprocess.com/products" target="_blank" rel="noopener">
+          <span class="mono">Premier practitioner</span>
+          <h3>Standard Process</h3>
+          <p>Whole-food supplements — shop the protocols we prescribe in clinic.</p>
+          <span class="shoplink">Visit dispensary <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+        <a class="disp-card" href="https://us.fullscript.com/welcome/healingwithzen" target="_blank" rel="noopener">
+          <span class="mono">Online dispensary</span>
+          <h3>Fullscript</h3>
+          <p>Professional-grade supplements, shipped straight to your door.</p>
+          <span class="shoplink">Visit dispensary <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+        <a class="disp-card" href="https://prolonlife.com/HealingWithZen" target="_blank" rel="noopener">
+          <span class="mono">Fasting nutrition</span>
+          <h3>ProLon</h3>
+          <p>Five-day fasting-mimicking programs for a gentle metabolic reset.</p>
+          <span class="shoplink">Explore programs <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+        <a class="disp-card" href="https://mydailychoice.com/shop/ear-seeds-ear-acupressure-essentials-set?ref=healingwithzen" target="_blank" rel="noopener">
+          <span class="mono">Acupressure at home</span>
+          <h3>EarSeeds</h3>
+          <p>24k gold and crystal ear seed kits that extend your treatment.</p>
+          <span class="shoplink">Shop kits <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== BOOK (dark) ===================== -->
 <section class="dark book section-pad" id="book" aria-labelledby="book-h">
   <div class="wrap">
@@ -1068,7 +1249,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   });
 
   /* ---------- QI-NODES: light progressively as sections enter ---------- */
-  var sectionOrder = ['hero','trust','heal','how','services','team','reviews','book','contact'];
+  var sectionOrder = ['hero','trust','heal','how','services','team','reviews','shop','book','contact'];
   var nodes = Array.prototype.slice.call(document.querySelectorAll('.qi-node'));
   function lightUpTo(idx){ nodes.forEach(function(n,i){ n.classList.toggle('active', i<=idx); }); }
   sectionOrder.forEach(function(id, idx){
@@ -1142,6 +1323,8 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   }
   staggerChildren('#atlasGrid', '.atlas-item');
   staggerChildren('.steps', '.step');
+  staggerChildren('#shopGrid', '.product-card');
+  staggerChildren('.disp-grid', '.disp-card');
 
   /* ---------- COUNT-UP STATS ---------- */
   gsap.utils.toArray('[data-count]').forEach(function(el){
