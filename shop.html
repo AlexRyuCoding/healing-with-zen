@@ -659,5 +659,51 @@ body.cursor-on a,body.cursor-on button{cursor:none}
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 })();
 </script>
+<!-- ============================================================= DEMO WATERMARK -->
+<style>
+.demo-wm{
+  position:fixed;
+  left:clamp(.9rem,2vw,1.5rem);
+  bottom:clamp(.9rem,2vw,1.5rem);
+  z-index:2147483000;
+  display:flex;align-items:center;gap:.6rem;
+  padding:.5rem .85rem .5rem .55rem;
+  background:rgba(30,42,36,.72);
+  border:1px solid rgba(234,228,213,.18);
+  border-radius:999px;
+  -webkit-backdrop-filter:blur(10px) saturate(1.1);
+  backdrop-filter:blur(10px) saturate(1.1);
+  box-shadow:0 6px 24px rgba(0,0,0,.22);
+  opacity:.62;
+  transition:opacity .3s ease, transform .3s ease;
+  user-select:none;
+}
+.demo-wm:hover{opacity:1;transform:translateY(-1px)}
+.demo-wm img{width:22px;height:22px;border-radius:5px;flex:none}
+.demo-wm__txt{display:flex;flex-direction:column;gap:2px;line-height:1}
+.demo-wm__lead{
+  font-family:"Space Mono",ui-monospace,monospace;
+  font-size:.62rem;font-weight:700;letter-spacing:.16em;
+  color:#EAE4D5;
+}
+.demo-wm__sub{
+  font-family:"Space Mono",ui-monospace,monospace;
+  font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(234,228,213,.6);
+}
+@media (max-width:520px){
+  .demo-wm{padding:.45rem}
+  .demo-wm__txt{display:none}
+}
+@media print{.demo-wm{display:none}}
+</style>
+<div class="demo-wm" role="note" aria-label="This is a demonstration concept website, not a live business site">
+  <img src="assets/practice-factor-logo3.png" alt="Practice Factor">
+  <span class="demo-wm__txt">
+    <span class="demo-wm__lead">DEMO / CONCEPT</span>
+    <span class="demo-wm__sub">Practice Factor</span>
+  </span>
+</div>
+
 </body>
 </html>
