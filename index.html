@@ -450,8 +450,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.02;letter
 /* ============================================================= RESPONSIVE */
 @media (max-width:1024px){
   .hero-grid{grid-template-columns:1fr;gap:2.5rem}
-  .hero-visual{max-width:440px;order:-1;aspect-ratio:16/11}
-  .hero-visual img{object-position:center 72%}
+  /* Keep the square 1:1 crop on mobile — the photo's logo (top) and heads get cut by a shorter ratio */
+  .hero-visual{max-width:440px;order:-1;aspect-ratio:1/1}
   .atlas-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
   /* Six links + wordmark + button need desktop width — use the overlay menu below 1025px */
