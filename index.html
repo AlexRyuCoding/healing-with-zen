@@ -252,6 +252,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
 
 /* Hero visual */
 .hero-visual{position:relative;aspect-ratio:4/5}
+.hero-visual img{width:100%;height:100%;object-fit:cover;border-radius:4px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(30,42,36,.45)}
 .hero-figure{width:100%;height:100%;overflow:visible}
 .hero-figure .frame{fill:var(--paper-2);stroke:var(--line);stroke-width:1}
 .hero-figure .meridian{fill:none;stroke:var(--jade);stroke-width:1.25;opacity:.8}
@@ -327,6 +328,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
 }
 .service-photo .glyph{position:absolute;inset:0;display:grid;place-items:center;color:var(--jade);opacity:.55}
 .service-photo .glyph svg{width:40%;height:40%}
+.service-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .service-card .code{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;color:var(--jade);margin-bottom:.5rem}
 .service-card h3{font-family:var(--font-display);font-size:1.5rem;font-weight:500;margin-bottom:.6rem}
 .service-card p{font-size:.95rem;color:color-mix(in srgb,var(--ink) 70%,transparent);line-height:1.5}
@@ -336,11 +338,13 @@ body.cursor-on a,body.cursor-on button{cursor:none}
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
 .member .portrait{
   aspect-ratio:4/5;border-radius:4px;overflow:hidden;position:relative;
-  background:linear-gradient(160deg,var(--ink-soft),var(--jade));
+  background:linear-gradient(160deg,var(--paper-2),var(--mist));
+  border:1px solid var(--line);
   clip-path:inset(0 0 0 0);
 }
 .member .portrait .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--mist);opacity:.5}
 .member .portrait .ph svg{width:38%}
+.member .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
 .member .meta{margin-top:1.5rem}
 .member .name{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:400;line-height:1;overflow:hidden}
 .member .role{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);margin:.9rem 0 1rem}
@@ -545,31 +549,10 @@ body.cursor-on a,body.cursor-on button{cursor:none}
       <p class="hero-trust" data-reveal>✧&nbsp; Serving Pasadena since <b>2013</b> · Hundreds of <b>5-star</b> experiences &nbsp;✧</p>
     </div>
 
-    <!-- PHOTO SLOT: practitioner portrait — abstract meridian figure until real photography drops in -->
+    <!-- PHOTO SLOT: practitioner portrait -->
     <div class="hero-visual" data-reveal>
-      <svg class="hero-figure" viewBox="0 0 320 400" role="img" aria-label="Abstract illustration of acupuncture meridian lines flowing through a seated figure">
-        <rect class="frame" x="1" y="1" width="318" height="398" rx="4"/>
-        <!-- seated silhouette -->
-        <path class="silhouette" d="M160 120c22 0 38 17 38 40 0 15-7 26-17 33 34 10 58 40 63 84 2 15 3 34 3 51H73c0-17 1-36 3-51 5-44 29-74 63-84-10-7-17-18-17-33 0-23 16-40 38-40Z" opacity=".14"/>
-        <!-- meridians -->
-        <path class="meridian" d="M160 60 C120 130 200 190 160 260 C130 310 190 350 160 400"/>
-        <path class="meridian-2" d="M110 90 C90 170 140 230 120 320"/>
-        <path class="meridian-2" d="M210 90 C230 170 180 230 200 320"/>
-        <path class="meridian" d="M70 200 C130 180 190 220 250 200" opacity=".4"/>
-        <!-- fixed acupoints on the figure -->
-        <circle class="pt-glow" cx="160" cy="60" r="4"/>
-        <circle class="pt" cx="160" cy="150" r="3.5"/>
-        <circle class="pt" cx="160" cy="260" r="3.5"/>
-        <circle class="pt-glow" cx="120" cy="320" r="3.5"/>
-        <circle class="pt-glow" cx="200" cy="320" r="3.5"/>
-        <circle class="pt" cx="110" cy="90" r="3"/>
-        <circle class="pt" cx="210" cy="90" r="3"/>
-        <!-- ambient floating nodes -->
-        <circle class="float-node pt-glow" cx="40" cy="70" r="3" opacity=".7"/>
-        <circle class="float-node pt" cx="285" cy="130" r="2.5" opacity=".7"/>
-        <circle class="float-node pt-glow" cx="55" cy="300" r="2.5" opacity=".6"/>
-        <circle class="float-node pt" cx="280" cy="330" r="3" opacity=".6"/>
-      </svg>
+      <img src="assets/img/hero-practitioners.jpg" width="1000" height="1000"
+           alt="Zen Tuan and Kiera Layne, the acupuncturists at Healing with Zen, in white coats">
     </div>
   </div>
 </section>
@@ -723,57 +706,57 @@ body.cursor-on a,body.cursor-on button{cursor:none}
       <div class="services-track" id="servicesTrack">
         <!-- PHOTO SLOT per card -->
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 21 21 3M14 4l6 6M8 10l6 6"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-acupuncture.jpg" alt="Acupuncture needles resting in a black ceramic cup" loading="lazy"></div>
           <div class="code">SP-6</div><h3>Acupuncture</h3>
           <p>Gentle, precise needling to move stuck qi and calm the nervous system.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11ZM6 14c4 0 6-3 6-6"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-herbal.jpg" alt="Traditional Chinese herbs with an apothecary scale" loading="lazy"></div>
           <div class="code">LU-9</div><h3>Herbal Therapy</h3>
           <p>Custom formulas that extend your results in the weeks between visits.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="10" r="6"/><path d="M12 16v5M8 21h8"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-cupping.jpg" alt="Hands performing bodywork on a patient's back" loading="lazy"></div>
           <div class="code">BL-17</div><h3>Cupping</h3>
           <p>Releases tension and improves circulation in tight, achy muscles.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-cosmetic.jpg" alt="Close-up of glowing, healthy skin" loading="lazy"></div>
           <div class="code">ST-3</div><h3>Cosmetic Acupuncture</h3>
           <p>A natural lift and glow — no injectables, no downtime.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 14c4-8 12-8 16 0M4 14c4 6 12 6 16 0"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-guasha.jpg" alt="A jade facial roller held in hand" loading="lazy"></div>
           <div class="code">LI-20</div><h3>Facial Gua Sha</h3>
           <p>Sculpting, lymph-draining strokes for brighter, calmer skin.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-microneedling.jpg" alt="A skincare serum bottle with botanicals on marble" loading="lazy"></div>
           <div class="code">DU-24</div><h3>Microneedling</h3>
           <p>Stimulates collagen for firmer, smoother, healthier skin.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M9 20h6M12 16v4"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-telemedicine.jpg" alt="A person typing on a laptop beside a cup of tea" loading="lazy"></div>
           <div class="code">HT-5</div><h3>Online Telemedicine</h3>
           <p>Herbal and lifestyle guidance from wherever you are.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3c3 3 3 6 0 9-3-3-3-6 0-9ZM12 12v9"/><path d="M12 21c-4 0-6-3-6-6 3 0 6 2 6 6Z"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-nutrition.jpg" alt="Fresh lemon, herbs and salt arranged on a white surface" loading="lazy"></div>
           <div class="code">ST-36</div><h3>Whole-Food Nutrition</h3>
           <p>Eat for your constitution with a plan that fits real life.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-redlight.jpg" alt="A warm candle glowing in a dim, calm space" loading="lazy"></div>
           <div class="code">DU-14</div><h3>Red Light Therapy</h3>
           <p>Low-level light to speed recovery and calm inflammation.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 8a6 6 0 0 0-12 0c0 4 3 5 3 9a3 3 0 0 0 6 0c0-4 3-5 3-9Z"/><circle cx="12" cy="8" r="1.5"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-earseeds.jpg" alt="Ear seeds applied to acupressure points on the ear" loading="lazy"></div>
           <div class="code">SI-19</div><h3>Earseeds</h3>
           <p>Tiny seeds that keep your treatment working between visits.</p>
         </article>
         <article class="service-card" data-reveal>
-          <div class="service-photo"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M3 12h18M12 8V6a2 2 0 1 1 2 2M12 8V6a2 2 0 1 0-2 2"/></svg></span></div>
+          <div class="service-photo"><img src="assets/img/service-giftcert.jpg" alt="A person relaxing serenely, floating in calm water" loading="lazy"></div>
           <div class="code">REN-8</div><h3>Gift Certificates</h3>
           <p>Give the gift of rest, relief, and genuine care.</p>
         </article>
@@ -791,7 +774,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
     <div class="team-grid">
       <article class="member" data-reveal>
         <!-- PHOTO SLOT: Zen Tuan headshot -->
-        <div class="portrait"><span class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="9" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg></span></div>
+        <div class="portrait"><img src="assets/img/team-zen-tuan.png" alt="Portrait of Zen Tuan, Acupuncturist, Herbalist and Clinical Director" loading="lazy"></div>
         <div class="meta">
           <h3 class="name split">Zen Tuan</h3>
           <p class="role">Acupuncturist · Herbalist · Clinical Director</p>
@@ -801,7 +784,7 @@ body.cursor-on a,body.cursor-on button{cursor:none}
       </article>
       <article class="member" data-reveal>
         <!-- PHOTO SLOT: Kiera Layne headshot -->
-        <div class="portrait"><span class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="9" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg></span></div>
+        <div class="portrait"><img src="assets/img/team-kiera-layne.png" alt="Portrait of Kiera Layne, Acupuncturist and Herbalist" loading="lazy"></div>
         <div class="meta">
           <h3 class="name split">Kiera Layne</h3>
           <p class="role">Acupuncturist · Herbalist</p>

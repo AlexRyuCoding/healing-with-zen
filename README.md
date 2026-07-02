@@ -21,7 +21,7 @@ Libraries (GSAP + ScrollTrigger, Lenis) and Google Fonts load from CDN, so the a
 - **Single self-contained `index.html`** — inline `<style>` and `<script>`, vanilla JS only.
 - **GSAP 3 + ScrollTrigger** — hero timeline, qi-line scrub, scroll reveals, count-ups, marquees, magnetic buttons, pinned services scroll.
 - **Lenis** — smooth scroll (wired into `ScrollTrigger.update` + `gsap.ticker`).
-- **No images** — all visuals are inline SVG/CSS. `<!-- PHOTO SLOT -->` comments mark where real photography drops in.
+- **Photography in `assets/img/`** — real practitioner and treatment photos fill the hero, the two team headshots, and the service cards (the `<!-- PHOTO SLOT -->` comments mark each spot). Remaining ambient visuals (qi-line, hero decoration, section nodes) are still inline SVG/CSS. Practitioner and clinic photos are from healingwithzen.com; the lifestyle service-card imagery is Unsplash.
 - **Accessible** — semantic landmarks, single `<h1>`, visible jade focus rings, and a full `prefers-reduced-motion` fallback (static content, no animation).
 
 ## Deploy to GitHub Pages
